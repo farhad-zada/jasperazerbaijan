@@ -8,7 +8,7 @@ const CustomerReviewCard = ({ image, name, comment }) => {
       initial={{ opacity: 0, x: 500 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className=" bg-gray-900 text-white p-6 rounded-lg flex flex-col space-y-4 w-full"
+      className=" bg-darkGray text-white p-6 rounded-lg flex flex-col space-y-4 w-full"
     >
       <div className="flex items-center gap-4">
         <Image

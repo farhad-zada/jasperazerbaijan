@@ -21,6 +21,7 @@ import Pricing from "@components/Pricing";
 import logo from "@/public/assets/inlineSliderLogo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import CustomerReviewCard from "@components/CustomerReviewCard";
+import FaqSection from "@components/FaqSection";
 
 function Card({ headText, descText, logo }) {
   return (
@@ -348,7 +349,7 @@ export default function Home() {
         <Slider />
         <section className="pt-40 ">
           <h1 className="header_text font-bold w-1/2 md:w-full leading-[46px]">
-            Unleash Your <span className="text-purbg-purple">Creativity</span>
+            Unleash Your <span className="text-purple">Creativity</span>
           </h1>
           <p className="w-3/4 md:w-4/6 subheader_text pt-10">
             Discover how our AI-Powered Design Assistant transforms your ideas
@@ -483,6 +484,10 @@ export default function Home() {
               </AnimatePresence>
             </motion.div>
           </div>
+        </section>
+
+        <section className="pt-40">
+          <FaqSection />
         </section>
       </div>
     </div>
