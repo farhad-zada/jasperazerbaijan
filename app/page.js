@@ -77,6 +77,31 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
   );
 }
 
+function SizesBasedCard({ headText, descText, logo, size }) {
+  return (
+    <div
+      className={`${
+        size === 1 ? "w-full md:w-2/3" : "w-full"
+      } bg-[#1A1A1A] h-96 rounded-2xl p-6 flex flex-col justify-between`}
+    >
+      {/* Top Section (Text + Icon) */}
+      <div className="flex justify-between items-start">
+        <p className="text-gray-300 w-5/6 text-lg md:text-lg 2xl:text-2xl">
+          {descText}
+        </p>
+        <div className="w-12 h-12 bg-[#914BF1] rounded-full flex justify-center items-center">
+          {logo}
+        </div>
+      </div>
+
+      {/* Bottom Section (Title) */}
+      <h3 className="text-white font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
+        {headText}
+      </h3>
+    </div>
+  );
+}
+
 const cardData = [
   {
     headText: "Upload Brief",
@@ -122,13 +147,44 @@ const featuresData = [
   },
 ];
 
+const kBasedCardData = [
+  {
+    headText: "Witness the Future",
+    descText:
+      "Dive into the world of AI where design possibilities are limitless. Let the cutting-edge technology transform your concepts into breathtaking visuals.",
+    logo: <HiArrowUpTray size={30} />,
+    size: 1,
+  },
+  {
+    headText: "Visualize the Impossible",
+    descText:
+      "Step beyond the ordinary with designs that defy conventions. Our AI conjures up imaginative visuals that push the boundaries of creativity.",
+    logo: <HiArrowUpTray size={30} />,
+    size: 2,
+  },
+  {
+    headText: "Synergy and Style",
+    descText:
+      "Experience the perfect blend of form and function. Our AI ensures that every design not only looks stunning but also serves its purpose flawlessly.",
+    logo: <HiArrowUpTray size={30} />,
+    size: 2,
+  },
+  {
+    headText: "Timeless Precision",
+    descText:
+      "Embrace the elegance of meticulously crafted designs. Our AI polishes every detail to bring a timeless quality to your creative projects.",
+    logo: <HiArrowUpTray size={30} />,
+    size: 1,
+  },
+];
+
 export default function Home() {
   return (
     <div className="w-screen h-[99999px] bg-black">
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto text-white">
         <LandingCard />
         <Slider />
-        <section className="pt-40 text-white">
+        <section className="pt-40 ">
           <h1 className="header_text font-bold w-1/2 md:w-full leading-[46px]">
             Unleash Your <span className="text-[#914BF1]">Creativity</span>
           </h1>
@@ -149,8 +205,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-        <section className="pt-40 text-white">
+        <section className="pt-40 ">
           {featuresData.map((feature, index) => (
             <FeaturesBlock
               key={index}
@@ -160,6 +215,33 @@ export default function Home() {
               reversed={feature.reversed}
             />
           ))}
+        </section>
+        <section className="pt-40 text-wrap">
+          <h1 className="header_text font-semibold">
+            Transforming <br /> Imagination into{" "}
+            <span className="text-[#914BF1]">Reality</span>
+          </h1>
+          <p className="w-full md:w-1/2">
+            Unlock the full potential of your creativity with our AI-powered
+            design assistant. Explore new dimensions of design, from futuristic
+            visuals to timeless craftsmanship, and witness how AI can turn your
+            wildest ideas into stunning realities.
+          </p>
+
+          <section className="space-y-4 mt-20">
+            <div className="flex gap-5 md:flex-row flex-col">
+              {kBasedCardData.slice(0, 2).map((card, index) => (
+                <SizesBasedCard key={index} {...card} />
+              ))}
+            </div>
+            <div className="flex gap-5 md:flex-row flex-col">
+              {kBasedCardData
+                .slice(2, kBasedCardData.length)
+                .map((card, index) => (
+                  <SizesBasedCard key={index} {...card} />
+                ))}
+            </div>
+          </section>
         </section>
       </div>
     </div>
