@@ -16,7 +16,7 @@ const PricingCard = ({
   return (
     <div
       className={`w-full md:w-full lg:w-full min-h-[600px] h-full p-4 rounded-2xl text-white flex flex-col ${
-        highlight ? "bg-[#914BF1]" : "bg-[#272829]"
+        highlight ? "bg-purple" : "bg-darkGray"
       }`}
     >
       <div className="flex-grow">
@@ -46,7 +46,7 @@ const PricingCard = ({
 
       <button
         className={`mt-auto rounded-2xl p-4 w-full border ${
-          highlight ? "bg-white text-black" : "bg-transparent text-[#914BF1]"
+          highlight ? "bg-white text-black" : "bg-transparent text-purbg-purple"
         }`}
       >
         Get Started

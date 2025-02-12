@@ -1,6 +1,16 @@
 "use client";
 
 import LandingCard from "@components/LandingCard";
+import avatarExample from "@public/assets/avatarExample.png";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
+
+import { useState, useCallback, useEffect } from "react";
+
 import Slider from "@components/Slider";
 import { HiSparkles, HiArrowUpTray, HiMiniRocketLaunch } from "react-icons/hi2";
 import Image from "@node_modules/next/image";
@@ -9,12 +19,13 @@ import featureBlockImage2 from "@public/assets/featureBlockImage2.png";
 import featureBlockImage3 from "@public/assets/featureBlockImage3.png";
 import Pricing from "@components/Pricing";
 import logo from "@/public/assets/inlineSliderLogo.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import CustomerReviewCard from "@components/CustomerReviewCard";
 
 function Card({ headText, descText, logo }) {
   return (
-    <div className="w-full bg-[#272829] min-h-56 h-full flex flex-col p-4">
-      <div className="size-16 bg-[#914BF1] rounded-full flex justify-center items-center">
+    <div className="w-full bg-darkGray min-h-56 h-full flex flex-col p-4">
+      <div className="size-16 bg-purple rounded-full flex justify-center items-center">
         {logo}
       </div>
       <div className="mt-14">
@@ -41,7 +52,7 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
               {headText}
             </h3>
             <p className="py-3 w-5/6 subheader_text">{descText}</p>
-            <button className="bg-[#914BF1] rounded-2xl p-4 w-40">
+            <button className="bg-purple rounded-2xl p-4 w-40">
               Get Started
             </button>
           </div>
@@ -53,7 +64,7 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
               {headText}
             </h3>
             <p className="py-3 w-5/6 subheader_text">{descText}</p>
-            <button className="bg-[#914BF1] rounded-2xl p-4 w-40">
+            <button className="bg-purple rounded-2xl p-4 w-40">
               Get Started
             </button>
           </div>
@@ -73,7 +84,7 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             {headText}
           </h3>
           <p className="py-3  subheader_text">{descText}</p>
-          <button className="bg-[#914BF1] rounded-2xl p-4 w-40 mx-auto mb-4">
+          <button className="bg-purple rounded-2xl p-4 w-40 mx-auto mb-4">
             Get Started
           </button>
         </div>
@@ -94,7 +105,7 @@ function SizesBasedCard({ headText, descText, logo, size }) {
         <p className="text-gray-300 w-5/6 text-lg md:text-lg 2xl:text-2xl">
           {descText}
         </p>
-        <div className="w-12 h-12 bg-[#914BF1] rounded-full flex justify-center items-center">
+        <div className="w-12 h-12 bg-purple rounded-full flex justify-center items-center">
           {logo}
         </div>
       </div>
@@ -245,7 +256,91 @@ const fakeLogosForSlider = [
   },
 ];
 
+const testimonials = [
+  {
+    id: 1,
+    image: avatarExample,
+    name: "John D.",
+    comment:
+      "Using this AI-powered design assistant has completely transformed the way I approach my projects. It’s like having a professional designer on call 24/7. Highly recommend it!",
+  },
+  {
+    id: 2,
+    image: avatarExample,
+    name: "Michael S.",
+    comment:
+      "The design suggestions are spot on and the automated features save me so much time. I can focus more on creativity rather than getting bogged down in details.",
+  },
+  {
+    id: 3,
+    image: avatarExample,
+    name: "David L.",
+    comment:
+      "This tool is a game-changer! It’s incredibly intuitive and the results are always impressive. I can't imagine working without it now.",
+  },
+  {
+    id: 4,
+    image: avatarExample,
+    name: "James K.",
+    comment:
+      "I was skeptical at first, but this AI assistant exceeded all my expectations. It’s easy to use and delivers professional-grade designs effortlessly.",
+  },
+  {
+    id: 5,
+    image: avatarExample,
+    name: "Robert P.",
+    comment:
+      "What an amazing tool! The AI understands my needs perfectly and helps me create stunning designs in no time. My productivity has doubled!",
+  },
+  {
+    id: 6,
+    image: avatarExample,
+    name: "William M.",
+    comment:
+      "I love how this AI-powered assistant blends technology and creativity. It’s a must-have for any designer looking to streamline their workflow and produce top-notch work.",
+  },
+];
+
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const slideLeft = useCallback(() => {
+    setDirection(-1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1
+    );
+  }, []);
+
+  const slideRight = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex >= testimonials.length - 3 ? 0 : prevIndex + 1
+    );
+  }, []);
+
+  const visibleTestimonials = [
+    testimonials[currentIndex],
+    testimonials[(currentIndex + 1) % testimonials.length],
+    testimonials[(currentIndex + 2) % testimonials.length],
+  ];
+
   return (
     <div className="w-screen h-[99999px] bg-black">
       <div className="w-11/12 mx-auto text-white">
@@ -253,7 +348,7 @@ export default function Home() {
         <Slider />
         <section className="pt-40 ">
           <h1 className="header_text font-bold w-1/2 md:w-full leading-[46px]">
-            Unleash Your <span className="text-[#914BF1]">Creativity</span>
+            Unleash Your <span className="text-purbg-purple">Creativity</span>
           </h1>
           <p className="w-3/4 md:w-4/6 subheader_text pt-10">
             Discover how our AI-Powered Design Assistant transforms your ideas
@@ -286,7 +381,7 @@ export default function Home() {
         <section className="pt-40 text-wrap">
           <h1 className="header_text font-semibold">
             Transforming <br /> Imagination into{" "}
-            <span className="text-[#914BF1]">Reality</span>
+            <span className="text-purbg-purple">Reality</span>
           </h1>
           <p className="w-full md:w-1/2">
             Unlock the full potential of your creativity with our AI-powered
@@ -314,10 +409,10 @@ export default function Home() {
         <Pricing onHomePage={true} />
 
         <section className="pt-40">
-          <div className="w-full h-[600px] bg-[#272829] rounded-3xl flex flex-col md:flex-row justify-between items-center pt-10">
+          <div className="w-full h-[600px] bg-darkGray rounded-3xl flex flex-col md:flex-row justify-between items-center pt-10">
             <h1 className="header_text font-medium leading-none md:leading-[40px] lg:leading-[50px] xl:leading-[60px] 2xl:leading-[72px] pl-10  w-full md:w-1/2">
               Seamless Tool <br />
-              <span className="text-[#914BF1]">Integration</span>
+              <span className="text-purbg-purple">Integration</span>
               <p className="text-lg leading-normal font-normal pt-5 w-full">
                 NajmAI offers seamless integration with a variety of popular
                 design and project management tools, ensuring a smooth and
@@ -333,6 +428,60 @@ export default function Home() {
                 />
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="pt-40">
+          <h1 className="text-white header_text">
+            Customer <span className="text-purple">Success</span> Stroies
+          </h1>
+          <div className="flex flex-col md:flex-row justify-between">
+            <p className="subheader_text w-full md:w-1/2">
+              Discover how our platform has helped businesses create outstanding
+              content effortlessly. Hear directly from our users about their
+              success and satisfaction.
+            </p>
+            <div className="flex gap-2 mt-10 mx-auto md:mx-0 md:mt-0">
+              <button
+                className="size-10 bg-purple rounded-full flex justify-center items-center p-2"
+                onClick={slideLeft}
+              >
+                <FaArrowLeft size={24} />
+              </button>
+              <button
+                className="size-10 bg-purple rounded-full flex justify-center items-center p-2"
+                onClick={slideRight}
+              >
+                <FaArrowRight size={24} />
+              </button>
+            </div>
+          </div>
+          <div className="relative mt-10">
+            <motion.div className="" initial={false}>
+              <AnimatePresence mode="popLayout" initial={true}>
+                {!isMobile ? (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {visibleTestimonials.map((testimonial, index) => (
+                      <CustomerReviewCard
+                        key={`${testimonial.id}-${index}`}
+                        {...testimonial}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex flex-col">
+                    {visibleTestimonials
+                      .slice(0, 1)
+                      .map((testimonial, index) => (
+                        <CustomerReviewCard
+                          key={`${testimonial.id}-${index}`}
+                          {...testimonial}
+                        />
+                      ))}
+                  </div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           </div>
         </section>
       </div>

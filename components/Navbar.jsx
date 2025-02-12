@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-3">
             <button
               onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="h-12 w-12 bg-[#272829] flex justify-center items-center rounded-md"
+              className="h-12 w-12 bg-darkGray flex justify-center items-center rounded-md"
             >
               <motion.div
                 key={isMenuOpen ? "close" : "bars"}
@@ -53,7 +53,7 @@ const Navbar = () => {
                 : { opacity: 0, scale: 0.9, y: -10 }
             }
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className={`absolute right-0 mt-4 w-48 bg-[#272829] text-white rounded-lg shadow-lg p-3 ${
+            className={`absolute right-0 mt-4 w-48 bg-darkGray text-white rounded-lg shadow-lg p-3 ${
               isMenuOpen ? "block" : "hidden"
             } z-[50]`}
           >

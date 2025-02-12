@@ -59,7 +59,7 @@ const Pricing = ({ onHomePage }) => {
     <div className={`${!onHomePage && "text-center mt-0"} mt-40 text-white`}>
       <h1 className="header_text font-bold leading-none 2xl:leading-[80px]">
         Affordable Plans <br></br> for{" "}
-        <span className="text-[#914BF1]"> Every Need</span>
+        <span className="text-purple"> Every Need</span>
       </h1>
       <p className={`${!onHomePage && "text-center"} w-full md:w-1/2 mt-8`}>
         Choose the perfect plan for your design projects, from startups to
@@ -72,7 +72,7 @@ const Pricing = ({ onHomePage }) => {
           Monthly
         </span>
         <button
-          className="relative w-16 h-8 bg-[#914BF1] rounded-full p-1 focus:outline-none"
+          className="relative w-16 h-8 bg-purple text-purple rounded-full p-1 focus:outline-none"
           onClick={() => setIsMontlyPrice(!isMontlyPrice)}
         >
           <span

@@ -10,6 +10,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        darkGray: "#272829",
+        purple: "#914BF1",
       },
     },
   },

@@ -4,12 +4,12 @@ import photo from "@/public/assets/landingAsset.png";
 
 const LandingCard = () => {
   return (
-    <section className="w-full bg-[#272829] rounded-[40px] relative flex flex-col md:flex-row items-center  md:h-[80vh] overflow-hidden p-6 md:p-12">
+    <section className="w-full bg-darkGray rounded-[40px] relative flex flex-col md:flex-row items-center  md:h-[80vh] overflow-hidden p-6 md:p-12">
       {/* Left Side - Text Content */}
       <div className="w-full text-center md:text-left space-y-5 text-white">
         <h1 className="  font-bold leading-tight header_text">
           Your AI-Powered <br />
-          <span className="text-[#914BF1]">Design</span> Assistant
+          <span className="text-purple">Design</span> Assistant
         </h1>
         <p>
           Unlock your creative potential. Seamlessly generate, customize, and
