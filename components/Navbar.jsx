@@ -19,7 +19,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <div className="w-screen bg-black h-20 flex items-center justify-center z-[40]">
+    <div className="w-screen bg-black h-20 flex items-center justify-center z-[40] py-16">
       <nav className="w-11/12 flex justify-between items-center">
         {/* Logo */}
         <h2 className="text-white text-xl font-semibold">JasperAzerbaijan</h2>
@@ -55,7 +55,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className={`absolute right-0 mt-4 w-48 bg-[#272829] text-white rounded-lg shadow-lg p-3 ${
               isMenuOpen ? "block" : "hidden"
-            }`}
+            } z-[50]`}
           >
             <ul className="space-y-2">
               {dropdownItems.map((item) => (

@@ -16,7 +16,7 @@ const logos = [
 const InfiniteSlider = () => {
   return (
     <div className="w-full bg-black">
-      <div className="overflow-hidden w-11/12 mx-auto bg-black py-6 relative z-[1]">
+      <div className="overflow-hidden w-11/12 mx-auto py-6 relative z-[1]">
         <motion.div
           className="flex space-x-8 w-max"
           initial={{ x: 0 }}
