@@ -19,7 +19,6 @@ const PricingCard = ({
         highlight ? "bg-[#914BF1]" : "bg-[#272829]"
       }`}
     >
-      {/* Content Wrapper: Takes up all available space */}
       <div className="flex-grow">
         <p className="text-left">{planType}</p>
         <h3 className="text-4xl font-semibold pt-4 pb-2.5">
@@ -45,7 +44,6 @@ const PricingCard = ({
         </div>
       </div>
 
-      {/* The button is now fixed at the bottom */}
       <button
         className={`mt-auto rounded-2xl p-4 w-full border ${
           highlight ? "bg-white text-black" : "bg-transparent text-[#914BF1]"

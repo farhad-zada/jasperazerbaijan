@@ -1,3 +1,5 @@
+"use client";
+
 import LandingCard from "@components/LandingCard";
 import Slider from "@components/Slider";
 import { HiSparkles, HiArrowUpTray, HiMiniRocketLaunch } from "react-icons/hi2";
@@ -6,6 +8,8 @@ import featureBlockImage1 from "@public/assets/featureBlockImage1.png";
 import featureBlockImage2 from "@public/assets/featureBlockImage2.png";
 import featureBlockImage3 from "@public/assets/featureBlockImage3.png";
 import Pricing from "@components/Pricing";
+import logo from "@/public/assets/inlineSliderLogo.png";
+import { motion } from "framer-motion";
 
 function Card({ headText, descText, logo }) {
   return (
@@ -103,6 +107,35 @@ function SizesBasedCard({ headText, descText, logo, size }) {
   );
 }
 
+function InlineSlider({ logos, reversed = false }) {
+  return (
+    <div className="overflow-hidden h-full w-full mx-auto py-6 z-[1]  flex items-center relative">
+      <motion.div
+        className="flex flex-col space-y-16"
+        initial={{ y: reversed ? "-20%" : "20%" }}
+        animate={{ y: reversed ? "20%" : "-20%" }}
+        transition={{
+          repeat: Infinity,
+          duration: 20,
+          ease: "linear",
+        }}
+      >
+        {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+          <div key={index} className="relative h-24 w-80">
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              layout="fill"
+              objectFit="contain"
+              priority
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
+
 const cardData = [
   {
     headText: "Upload Brief",
@@ -179,6 +212,39 @@ const kBasedCardData = [
   },
 ];
 
+const fakeLogosForSlider = [
+  {
+    id: 1,
+    logos: [
+      { id: 1, src: logo, alt: "logo" },
+      { id: 2, src: logo, alt: "logo" },
+      { id: 3, src: logo, alt: "logo" },
+      { id: 4, src: logo, alt: "logo" },
+      { id: 5, src: logo, alt: "logo" },
+    ],
+  },
+  {
+    id: 2,
+    logos: [
+      { id: 1, src: logo, alt: "logo" },
+      { id: 2, src: logo, alt: "logo" },
+      { id: 3, src: logo, alt: "logo" },
+      { id: 4, src: logo, alt: "logo" },
+      { id: 5, src: logo, alt: "logo" },
+    ],
+  },
+  {
+    id: 3,
+    logos: [
+      { id: 1, src: logo, alt: "logo" },
+      { id: 2, src: logo, alt: "logo" },
+      { id: 3, src: logo, alt: "logo" },
+      { id: 4, src: logo, alt: "logo" },
+      { id: 5, src: logo, alt: "logo" },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <div className="w-screen h-[99999px] bg-black">
@@ -246,6 +312,29 @@ export default function Home() {
         </section>
 
         <Pricing onHomePage={true} />
+
+        <section className="pt-40">
+          <div className="w-full h-[600px] bg-[#272829] rounded-3xl flex flex-col md:flex-row justify-between items-center pt-10">
+            <h1 className="header_text font-medium leading-none md:leading-[40px] lg:leading-[50px] xl:leading-[60px] 2xl:leading-[72px] pl-10  w-full md:w-1/2">
+              Seamless Tool <br />
+              <span className="text-[#914BF1]">Integration</span>
+              <p className="text-lg leading-normal font-normal pt-5 w-full">
+                NajmAI offers seamless integration with a variety of popular
+                design and project management tools, ensuring a smooth and
+                efficient workflow.
+              </p>
+            </h1>
+            <div className="h-full overflow-hidden hidden md:flex">
+              {fakeLogosForSlider.map((group, index) => (
+                <InlineSlider
+                  key={index}
+                  logos={group.logos}
+                  reversed={index % 2 === 0}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
