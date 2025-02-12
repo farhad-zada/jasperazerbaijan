@@ -343,7 +343,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="w-screen h-[99999px] bg-black">
+    <div className="w-screen h-full bg-black">
       <div className="w-11/12 mx-auto text-white">
         <LandingCard />
         <Slider />
@@ -489,6 +489,8 @@ export default function Home() {
         <section className="pt-40">
           <FaqSection />
         </section>
+
+        <div className="bg-black w-full h-40"></div>
       </div>
     </div>
   );
