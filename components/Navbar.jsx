@@ -19,7 +19,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <div className="w-screen bg-black h-20 flex items-center justify-center">
+    <div className="w-screen bg-black h-20 flex items-center justify-center z-[40]">
       <nav className="w-11/12 flex justify-between items-center">
         {/* Logo */}
         <h2 className="text-white text-xl font-semibold">JasperAzerbaijan</h2>
