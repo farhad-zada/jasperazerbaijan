@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import Link from "@node_modules/next/link";
 
 const dropdownItems = [
   "Home",
@@ -22,7 +23,9 @@ const Navbar = () => {
     <div className="w-screen bg-black h-20 flex items-center justify-center z-[40] py-16">
       <nav className="w-11/12 flex justify-between items-center">
         {/* Logo */}
-        <h2 className="text-white text-xl font-semibold">JasperAzerbaijan</h2>
+        <Link href={"/"}>
+          <h2 className="text-white text-xl font-semibold">JasperAzerbaijan</h2>
+        </Link>
 
         <div className="relative">
           <div className="flex items-center space-x-3">
