@@ -5,6 +5,7 @@ import Image from "@node_modules/next/image";
 import featureBlockImage1 from "@public/assets/featureBlockImage1.png";
 import featureBlockImage2 from "@public/assets/featureBlockImage2.png";
 import featureBlockImage3 from "@public/assets/featureBlockImage3.png";
+import Pricing from "@components/Pricing";
 
 function Card({ headText, descText, logo }) {
   return (
@@ -243,6 +244,8 @@ export default function Home() {
             </div>
           </section>
         </section>
+
+        <Pricing onHomePage={true} />
       </div>
     </div>
   );
