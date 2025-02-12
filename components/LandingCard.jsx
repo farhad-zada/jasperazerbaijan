@@ -4,7 +4,7 @@ import photo from "@/public/assets/landingAsset.png";
 
 const LandingCard = () => {
   return (
-    <div className="w-11/12 bg-[#272829] rounded-[40px] relative flex flex-col md:flex-row items-center mx-auto md:h-[80vh] overflow-hidden p-6 md:p-12">
+    <section className="w-full bg-[#272829] rounded-[40px] relative flex flex-col md:flex-row items-center  md:h-[80vh] overflow-hidden p-6 md:p-12">
       {/* Left Side - Text Content */}
       <div className="w-full text-center md:text-left space-y-5 text-white">
         <h1 className="  font-bold leading-tight header_text">
@@ -27,7 +27,7 @@ const LandingCard = () => {
           className="object-contain max-w-full h-auto"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

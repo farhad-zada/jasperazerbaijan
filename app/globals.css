@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -16,5 +17,10 @@
 
 .header_text
 {
-  font-size: clamp(2rem, 5vw, 10rem); 
+  font-size: clamp(3rem, 5vw, 10rem); 
+}
+
+.subheader_text
+{
+  font-size: clamp(1rem, 1.5vw, 5rem);  
 }
