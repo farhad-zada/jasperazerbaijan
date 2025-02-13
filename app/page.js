@@ -23,6 +23,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import CustomerReviewCard from "@components/CustomerReviewCard";
 import FaqSection from "@components/FaqSection";
 import useBreakpoint from "@utils/hooks/useBreakpoint";
+import { Outfit } from "next/font/google";
+
+const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
 const cardVariants = {
   hidden: { opacity: 0, x: 50 },
@@ -356,16 +359,17 @@ export default function Home() {
 
   return (
     <div className="w-screen h-full bg-black overflow-hidden">
-      <div className="w-11/12 mx-auto text-white">
+      <div
+        className={`w-11/12 mx-auto text-white ${outfitFontNormal.className}`}
+      >
         <LandingCard />
         <Slider />
         <section className="pt-40">
           <motion.h1
-            style={{ overflow: "hidden", whiteSpace: "nowrap" }}
-            className="header_text font-bold w-1/2 md:w-full leading-[46px] lg:h-14 2xl:h-20"
-            initial={{ width: 0 }}
-            whileInView={{ width: "100%" }}
-            transition={{ duration: 2, ease: "easeInOut" }}
+            className="header_text font-bold w-full leading-[46px] lg:h-14 2xl:h-20"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Unleash Your <span className="text-purple h-full">Creativity</span>
           </motion.h1>
