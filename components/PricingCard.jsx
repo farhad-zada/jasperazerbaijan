@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "@node_modules/next/image";
+import { motion } from "framer-motion";
 
 const PricingCard = ({
   id,
@@ -13,11 +14,33 @@ const PricingCard = ({
   features,
   isMonthly,
 }) => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+  const cardVariants = {
+    hidden: isMobile
+      ? id === 2
+        ? { opacity: 0, x: 100 }
+        : { opacity: 0, x: -100 }
+      : id === 2
+      ? { opacity: 0, y: 200 }
+      : { opacity: 0, y: -200 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       className={`w-full md:w-full lg:w-full min-h-[600px] h-full p-4 rounded-2xl text-white flex flex-col ${
         highlight ? "bg-purple" : "bg-darkGray"
       }`}
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
     >
       <div className="flex-grow">
         <p className="text-left">{planType}</p>
@@ -51,7 +74,7 @@ const PricingCard = ({
       >
         Get Started
       </button>
-    </div>
+    </motion.div>
   );
 };
 

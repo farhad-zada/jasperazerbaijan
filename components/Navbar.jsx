@@ -16,6 +16,21 @@ const dropdownItems = [
   "Contact",
 ];
 
+const staggeredList = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const listItem = {
+  hidden: { opacity: 0, y: 200 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -60,16 +75,22 @@ const Navbar = () => {
               isMenuOpen ? "block" : "hidden"
             } z-[50]`}
           >
-            <ul className="space-y-2">
-              {dropdownItems.map((item) => (
-                <li
-                  key={item}
+            <motion.ul
+              className="space-y-2 mt-10 overflow-hidden"
+              variants={staggeredList}
+              initial="hidden"
+              animate="visible"
+            >
+              {dropdownItems.map((item, index) => (
+                <motion.li
+                  key={index}
                   className="hover:underline cursor-pointer transition duration-200"
+                  variants={listItem}
                 >
                   {item}
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </motion.div>
         </div>
       </nav>

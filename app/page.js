@@ -23,6 +23,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import CustomerReviewCard from "@components/CustomerReviewCard";
 import FaqSection from "@components/FaqSection";
 
+const cardVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 1.5, ease: "easeOut" } },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const fadeInScale = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
 function Card({ headText, descText, logo }) {
   return (
     <div className="w-full bg-darkGray min-h-56 h-full flex flex-col p-4">
@@ -39,7 +58,13 @@ function Card({ headText, descText, logo }) {
 
 function FeaturesBlock({ headText, descText, photo, reversed = false }) {
   return (
-    <div className="mt-0 mb-20 md:mb-0 md:mt-20">
+    <motion.div
+      className="mt-0 mb-20 md:mb-0 md:mt-20"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       {reversed ? (
         <div className="md:flex items-center justify-between w-full hidden">
           <Image
@@ -69,7 +94,6 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
               Get Started
             </button>
           </div>
-
           <Image
             src={photo}
             width={400}
@@ -84,24 +108,27 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
           <h3 className="header_text font-semibold leading-[72px]">
             {headText}
           </h3>
-          <p className="py-3  subheader_text">{descText}</p>
+          <p className="py-3 subheader_text">{descText}</p>
           <button className="bg-purple rounded-2xl p-4 w-40 mx-auto mb-4">
             Get Started
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function SizesBasedCard({ headText, descText, logo, size }) {
   return (
-    <div
+    <motion.div
       className={`${
         size === 1 ? "w-full md:w-2/3" : "w-full"
       } bg-[#1A1A1A] h-96 rounded-2xl p-6 flex flex-col justify-between`}
+      variants={fadeInScale}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
     >
-      {/* Top Section (Text + Icon) */}
       <div className="flex justify-between items-start">
         <p className="text-gray-300 w-5/6 text-lg md:text-lg 2xl:text-2xl">
           {descText}
@@ -110,12 +137,10 @@ function SizesBasedCard({ headText, descText, logo, size }) {
           {logo}
         </div>
       </div>
-
-      {/* Bottom Section (Title) */}
       <h3 className="text-white font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
         {headText}
       </h3>
-    </div>
+    </motion.div>
   );
 }
 
@@ -347,24 +372,43 @@ export default function Home() {
       <div className="w-11/12 mx-auto text-white">
         <LandingCard />
         <Slider />
-        <section className="pt-40 ">
-          <h1 className="header_text font-bold w-1/2 md:w-full leading-[46px]">
-            Unleash Your <span className="text-purple">Creativity</span>
-          </h1>
-          <p className="w-3/4 md:w-4/6 subheader_text pt-10">
+        <section className="pt-40">
+          <motion.h1
+            style={{ overflow: "hidden", whiteSpace: "nowrap" }}
+            className="header_text font-bold w-1/2 md:w-full leading-[46px] lg:h-14 2xl:h-20"
+            initial={{ width: 0 }}
+            whileInView={{ width: "100%" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+          >
+            Unleash Your <span className="text-purple h-full">Creativity</span>
+          </motion.h1>
+
+          <motion.p
+            className="w-3/4 md:w-4/6 subheader_text pt-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
             Discover how our AI-Powered Design Assistant transforms your ideas
             into stunning designs effortlessly. Follow these simple steps to
             turn your vision into reality.
-          </p>
+          </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
             {cardData.map((card, index) => (
-              <Card
+              <motion.div
                 key={index}
-                headText={card.headText}
-                descText={card.descText}
-                logo={card.logo}
-              />
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <Card
+                  headText={card.headText}
+                  descText={card.descText}
+                  logo={card.logo}
+                />
+              </motion.div>
             ))}
           </div>
         </section>
