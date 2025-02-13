@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "@node_modules/next/image";
 import { motion } from "framer-motion";
+import useBreakpoint from "@utils/hooks/useBreakpoint";
 
 const PricingCard = ({
   id,
@@ -14,21 +14,7 @@ const PricingCard = ({
   features,
   isMonthly,
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkScreenSize(); // İlk renderda kontrol et
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-    };
-  }, []);
-  ``;
+  const isMobile = useBreakpoint();
   const cardVariants = {
     hidden: isMobile
       ? id === 2

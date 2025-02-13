@@ -22,6 +22,7 @@ import logo from "@/public/assets/inlineSliderLogo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import CustomerReviewCard from "@components/CustomerReviewCard";
 import FaqSection from "@components/FaqSection";
+import useBreakpoint from "@utils/hooks/useBreakpoint";
 
 const cardVariants = {
   hidden: { opacity: 0, x: 50 },
@@ -328,24 +329,8 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useBreakpoint();
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    if (typeof window !== "undefined") {
-      checkScreenSize();
-      window.addEventListener("resize", checkScreenSize);
-    }
-
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("resize", checkScreenSize);
-      }
-    };
-  }, []);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 

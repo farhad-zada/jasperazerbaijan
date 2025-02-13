@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import Link from "@node_modules/next/link";
+import useOutsideClick from "@utils/hooks/useOutsideClick";
 
 const dropdownItems = [
   "Home",
@@ -32,6 +33,11 @@ const listItem = {
 };
 
 const Navbar = () => {
+  const ref = useRef(null);
+
+  useOutsideClick(ref, () => {
+    if (isMenuOpen) setIsMenuOpen(false);
+  });
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -64,6 +70,7 @@ const Navbar = () => {
           </div>
 
           <motion.div
+            ref={ref}
             initial={{ opacity: 0, scale: 0.9, y: -10 }}
             animate={
               isMenuOpen
