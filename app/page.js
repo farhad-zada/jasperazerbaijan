@@ -328,22 +328,24 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
+    const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
+    if (typeof window !== "undefined") {
+      checkScreenSize();
+      window.addEventListener("resize", checkScreenSize);
+    }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", checkScreenSize);
+      }
     };
   }, []);
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 

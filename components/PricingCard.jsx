@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useEffect, useState } from "react";
 import Image from "@node_modules/next/image";
 import { motion } from "framer-motion";
 
@@ -14,8 +14,21 @@ const PricingCard = ({
   features,
   isMonthly,
 }) => {
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize(); // İlk renderda kontrol et
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+  ``;
   const cardVariants = {
     hidden: isMobile
       ? id === 2
