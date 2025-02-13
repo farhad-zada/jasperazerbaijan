@@ -89,6 +89,7 @@ export default function FAQ() {
 
   return (
     <motion.div
+      id="faq"
       className="bg-darkGray min-h-[500px] flex flex-col md:flex-row justify-between items-center px-4 w-full rounded-2xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

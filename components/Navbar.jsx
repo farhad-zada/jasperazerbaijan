@@ -8,13 +8,34 @@ import Link from "@node_modules/next/link";
 import useOutsideClick from "@utils/hooks/useOutsideClick";
 
 const dropdownItems = [
-  "Home",
-  "How it Works",
-  "Features",
-  "Pricing",
-  "Blog",
-  "FAQs",
-  "Contact",
+  {
+    id: 1,
+    title: "Home",
+    isNewPage: true,
+    element: null,
+    path: "/",
+  },
+  {
+    id: 2,
+    title: "Pricing",
+    isNewPage: true,
+    element: null,
+    path: "/pricing",
+  },
+  {
+    id: 3,
+    title: "FAQs",
+    isNewPage: false,
+    element: "faq",
+    path: null,
+  },
+  {
+    id: 4,
+    title: "Contact",
+    isNewPage: true,
+    element: null,
+    path: "/contact",
+  },
 ];
 
 const staggeredList = {
@@ -33,6 +54,18 @@ const listItem = {
 };
 
 const Navbar = () => {
+  const handleGoSomewhere = (path) => {
+    const element = document.getElementById(path);
+
+    if (element) {
+      const elementBottomPosition = element.offsetTop + element.offsetHeight;
+      window.scrollTo({
+        top: elementBottomPosition - window.innerHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const ref = useRef(null);
 
   useOutsideClick(ref, () => {
@@ -93,8 +126,15 @@ const Navbar = () => {
                   key={index}
                   className="hover:underline cursor-pointer transition duration-200"
                   variants={listItem}
+                  onClick={() => {
+                    if (item.isNewPage) {
+                      window.location.href = item.path;
+                    } else {
+                      handleGoSomewhere(item.element);
+                    }
+                  }}
                 >
-                  {item}
+                  {item.title}
                 </motion.li>
               ))}
             </motion.ul>

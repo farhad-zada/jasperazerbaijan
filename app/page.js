@@ -355,7 +355,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="w-screen h-full bg-black">
+    <div className="w-screen h-full bg-black overflow-hidden">
       <div className="w-11/12 mx-auto text-white">
         <LandingCard />
         <Slider />
