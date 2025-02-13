@@ -28,7 +28,7 @@ const Page = () => {
     setSuccess(true);
     reset();
 
-    setTimeout(() => setSuccess(false), 2000); // Success state clears after 2s
+    setTimeout(() => setSuccess(false), 2000);
   };
 
   return (
@@ -47,7 +47,9 @@ const Page = () => {
           className="mt-8 space-y-4 p-6 rounded-2xl w-full lg:w-6/12 mx-auto bg-darkGray shadow-lg"
         >
           <div className="text-left">
-            <label className="block mb-1">Name</label>
+            <label className="block mb-1 ">
+              Name <span className="text-purple">*</span>
+            </label>
             <input
               {...register("name", { required: "Name is required" })}
               className="w-full px-4 py-2 bg-[#BBBBBB]/15 rounded-lg placeholder:text-[#D9D9D9] border border-gray-700 focus:border-purple focus:ring-1 focus:ring-purple outline-none transition-all duration-200"
@@ -68,7 +70,6 @@ const Page = () => {
               id="phone"
               type="tel"
               {...register("phone", {
-                required: "Phone number is required",
                 pattern: {
                   value:
                     /^[+]?[0-9]{1,3}?[-. ]?(\(?\d{1,4}?\))?[-. ]?\d{1,4}[-. ]?\d{1,4}[-. ]?\d{1,9}$/,
@@ -88,22 +89,21 @@ const Page = () => {
           <div className="text-left">
             <label className="block mb-1">Telegram username</label>
             <input
-              {...register("telegramAdress", {
-                required: "Telegram username is required",
-              })}
+              {...register("telegramAdress", {})}
               className="w-full px-4 py-2 bg-[#BBBBBB]/15 rounded-lg placeholder:text-[#D9D9D9] border border-gray-700 focus:border-purple focus:ring-1 focus:ring-purple outline-none transition-all duration-200"
               placeholder="Enter your Telegram username"
             />
-            {errors.name && (
+            {errors.telegramAdress && (
               <p className="text-red-500 text-sm py-1 mt-2 pl-2">
                 {errors.telegramAdress.message}
               </p>
             )}
           </div>
 
-          {/* Email Field */}
           <div className="text-left">
-            <label className="block mb-1">Email</label>
+            <label className="block mb-1 ">
+              Email <span className="text-purple">*</span>
+            </label>
             <input
               {...register("email", {
                 required: "Email is required",
@@ -119,9 +119,10 @@ const Page = () => {
             )}
           </div>
 
-          {/* Message Field */}
           <div className="text-left">
-            <label className="block mb-1">Message</label>
+            <label className="block mb-1 ">
+              Message <span className="text-purple">*</span>
+            </label>
             <textarea
               {...register("message", { required: "Message cannot be empty" })}
               className="w-full h-40 placeholder:text-[#D9D9D9] px-4 py-2 bg-[#BBBBBB]/15 rounded-lg border border-gray-700 focus:border-purple focus:ring-1 focus:ring-purple outline-none transition-all duration-200"
@@ -132,7 +133,6 @@ const Page = () => {
             )}
           </div>
 
-          {/* Submit Button with Animation */}
           <motion.button
             type="submit"
             disabled={loading}
