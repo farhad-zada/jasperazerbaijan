@@ -34,10 +34,15 @@ const Footer = () => {
       </div>
       <hr className="mt-5 w-11/12 mx-auto bg-darkGray opacity-25"></hr>
 
-      <div>
+      <div className="w-11/12 mx-auto flex flex-col md:flex-row justify-between py-5 items-center">
         <p className="text-center text-gray-400 py-5">
           © 2025 Jasper Azerbaijan. All rights reserved.
         </p>
+        <Link href={"https://github.com/AliAgayevv"} target="_blank">
+          <p className="md:hover:underline underline-offset-2 text-purple md:text-white transition-all duration-300 md:hover:cursor-pointer md:hover:text-purple">
+            Created by Ali Agayevh
+          </p>
+        </Link>
       </div>
     </footer>
   );

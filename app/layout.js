@@ -2,6 +2,7 @@ import SmoothScroll from "@components/SmoothScroll";
 import "./globals.css";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
+import GoToTopButton from "@components/GoToTop";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       <body>
         <SmoothScroll>
           <Navbar />
+          <GoToTopButton />
           {children}
           <Footer />
         </SmoothScroll>
