@@ -1,32 +1,9 @@
-import Link from "@node_modules/next/link";
-import React from "react";
+"use client";
 
-const footerData = [
-  {
-    id: 1,
-    title: "How it Works",
-  },
-  {
-    id: 2,
-    title: "Features",
-  },
-  {
-    id: 3,
-    title: "Pricing",
-  },
-  {
-    id: 4,
-    title: "Blog",
-  },
-  {
-    id: 5,
-    title: "Faqs",
-  },
-  {
-    id: 6,
-    title: "Contact",
-  },
-];
+import { dropdownItems } from "@datas/dropdownItems";
+import Link from "@node_modules/next/link";
+import { handleGoSomewhere } from "@utils/handleGoSomewhere";
+import React from "react";
 
 const Footer = () => {
   return (
@@ -37,8 +14,20 @@ const Footer = () => {
             <h2 className="text-3xl md:text-5xl">Jasper Azerbaijan</h2>
           </Link>
           <ul className="flex gap-5 mt-10 md:mt-0 md:gap-3 flex-col md:flex-row">
-            {footerData.map((item) => (
-              <li key={item.id}>{item.title}</li>
+            {dropdownItems.map((item) => (
+              <li
+                className="hover:underline transition-all duration-300 hover:cursor-pointer"
+                onClick={() => {
+                  if (item.isNewPage) {
+                    window.location.href = item.path;
+                  } else {
+                    handleGoSomewhere(item.element);
+                  }
+                }}
+                key={item.id}
+              >
+                {item.title}
+              </li>
             ))}
           </ul>
         </div>

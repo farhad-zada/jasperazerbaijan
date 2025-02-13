@@ -6,37 +6,8 @@ import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import Link from "@node_modules/next/link";
 import useOutsideClick from "@utils/hooks/useOutsideClick";
-
-const dropdownItems = [
-  {
-    id: 1,
-    title: "Home",
-    isNewPage: true,
-    element: null,
-    path: "/",
-  },
-  {
-    id: 2,
-    title: "Pricing",
-    isNewPage: true,
-    element: null,
-    path: "/pricing",
-  },
-  {
-    id: 3,
-    title: "FAQs",
-    isNewPage: false,
-    element: "faq",
-    path: null,
-  },
-  {
-    id: 4,
-    title: "Contact",
-    isNewPage: true,
-    element: null,
-    path: "/contact",
-  },
-];
+import { handleGoSomewhere } from "@utils/handleGoSomewhere";
+import { dropdownItems } from "@datas/dropdownItems";
 
 const staggeredList = {
   hidden: { opacity: 0 },
@@ -54,18 +25,6 @@ const listItem = {
 };
 
 const Navbar = () => {
-  const handleGoSomewhere = (path) => {
-    const element = document.getElementById(path);
-
-    if (element) {
-      const elementBottomPosition = element.offsetTop + element.offsetHeight;
-      window.scrollTo({
-        top: elementBottomPosition - window.innerHeight,
-        behavior: "smooth",
-      });
-    }
-  };
-
   const ref = useRef(null);
 
   useOutsideClick(ref, () => {
