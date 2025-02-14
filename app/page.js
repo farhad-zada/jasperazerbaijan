@@ -180,17 +180,20 @@ function InlineSlider({ logos, reversed = false }) {
 const cardData = [
   {
     headText: "Upload Brief",
-    descText: "Share your project details and let our AI grasp your vision.",
+    descText:
+      "Share your vision, objectives, and challenges. We’ll pinpoint your needs and craft a clear, high-impact strategy.",
     logo: <HiArrowUpTray size={30} />,
   },
   {
-    headText: "Generate Designs",
-    descText: "Watch as our AI crafts unique design ideas tailored to you.",
+    headText: "Generate Solutions",
+    descText:
+      "Our multidisciplinary team unites front-end, back-end, AI, and blockchain expertise to deliver tailored solutions—whether it’s automating workflows, building e-commerce platforms, or deploying smart contracts.",
     logo: <HiSparkles size={30} />,
   },
   {
-    headText: "Refine Creation",
-    descText: "Perfect your chosen concept with easy-to-use AI tools.",
+    headText: "Refine & Launch",
+    descText:
+      "We test, optimize, and perfect every detail before going live. Post-launch, we stay by your side to ensure you adapt and grow with evolving tech and market demands.",
     logo: <HiMiniRocketLaunch size={30} />,
   },
 ];
@@ -198,9 +201,9 @@ const cardData = [
 const featuresData = [
   {
     id: 1,
-    headText: "High-Resolution Outputs",
+    headText: "Accurate & Insightful Reports",
     descText:
-      "Download your final designs in high-resolution formats suitable for print and digital use. Ensure your work looks professional and polished in any medium.",
+      "Export real-time analytics and performance data in multiple formats. Make informed decisions with precise, high-resolution insights tailored to your needs.",
     photo: featureBlockImage1,
     reversed: false,
   },
@@ -216,7 +219,7 @@ const featuresData = [
     id: 3,
     headText: "Advanced Scheduling Tools",
     descText:
-      "Plan and schedule your design projects with ease. Use our scheduling tools to set deadlines, track milestones, and ensure timely delivery of your design work.",
+      "Plan and schedule your projects with ease. Use our scheduling tools to set deadlines, track milestones, and ensure timely delivery of your design work.",
     photo: featureBlockImage3,
     reversed: false,
   },
@@ -224,30 +227,30 @@ const featuresData = [
 
 const kBasedCardData = [
   {
-    headText: "Witness the Future",
+    headText: "Empower Your Decisions",
     descText:
-      "Dive into the world of AI where design possibilities are limitless. Let the cutting-edge technology transform your concepts into breathtaking visuals.",
+      "Leverage AI-driven insights and automation to optimize your operations. Transform data into actionable strategies with cutting-edge technology.",
     logo: <HiArrowUpTray size={30} />,
     size: 1,
   },
   {
-    headText: "Visualize the Impossible",
+    headText: "Redefine What's Possible",
     descText:
-      "Step beyond the ordinary with designs that defy conventions. Our AI conjures up imaginative visuals that push the boundaries of creativity.",
+      "Harness AI and automation to streamline complex tasks, optimize workflows, and unlock new opportunities for growth.",
     logo: <HiArrowUpTray size={30} />,
     size: 2,
   },
   {
-    headText: "Synergy and Style",
+    headText: "Efficiency Meets Innovation",
     descText:
-      "Experience the perfect blend of form and function. Our AI ensures that every design not only looks stunning but also serves its purpose flawlessly.",
+      "Seamlessly integrate AI-powered solutions that enhance performance, automate processes, and drive smarter decision-making.",
     logo: <HiArrowUpTray size={30} />,
     size: 2,
   },
   {
-    headText: "Timeless Precision",
+    headText: "Unmatched Accuracy",
     descText:
-      "Embrace the elegance of meticulously crafted designs. Our AI polishes every detail to bring a timeless quality to your creative projects.",
+      "Harness AI-driven precision for optimal performance. Our technology refines every process, ensuring efficiency and reliability in every task.",
     logo: <HiArrowUpTray size={30} />,
     size: 1,
   },
@@ -371,7 +374,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Unleash Your <span className="text-purple h-full">Creativity</span>
+            Unleash Your <span className="text-purple h-full">Potential</span>
           </motion.h1>
 
           <motion.p
@@ -380,9 +383,12 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            Discover how our AI-Powered Design Assistant transforms your ideas
-            into stunning designs effortlessly. Follow these simple steps to
-            turn your vision into reality.
+            At Jasper Azerbaijan, we don’t just build technology—we
+            revolutionize the way businesses embrace the digital world. From
+            AI-driven platforms and e-commerce solutions to secure blockchain
+            contracts and custom backend architectures, our expert team is here
+            to help you break boundaries and stand out in today’s fast-paced
+            market.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
@@ -416,14 +422,14 @@ export default function Home() {
         </section>
         <section className="pt-40 text-wrap">
           <h1 className="header_text font-semibold">
-            Transforming <br /> Imagination into{" "}
+            Transforming <br /> Innovation into{" "}
             <span className="text-purbg-purple">Reality</span>
           </h1>
           <p className="w-full md:w-1/2">
-            Unlock the full potential of your creativity with our AI-powered
-            design assistant. Explore new dimensions of design, from futuristic
-            visuals to timeless craftsmanship, and witness how AI can turn your
-            wildest ideas into stunning realities.
+            Empower your vision with AI-driven precision. Our technology
+            optimizes workflows, enhances automation, and brings intelligent
+            solutions to complex challenges—turning bold ideas into real-world
+            impact.
           </p>
 
           <section className="space-y-4 mt-20">
@@ -446,15 +452,15 @@ export default function Home() {
 
         <section className="pt-40">
           <div className="w-full h-[600px] bg-darkGray rounded-3xl flex flex-col md:flex-row justify-between items-center pt-10">
-            <h1 className="header_text font-medium leading-none md:leading-[40px] lg:leading-[50px] xl:leading-[60px] 2xl:leading-[72px] pl-10  w-full md:w-1/2">
-              Seamless Tool <br />
-              <span className="text-purbg-purple">Integration</span>
+            <h1 className="header_text font-medium leading-none md:leading-[40px] lg:leading-[50px] xl:leading-[60px] 2xl:leading-[72px] pl-10 w-full md:w-1/2">
+              Smart <br />
+              <span className="text-purbg-purple">AI Integration</span>
               <p className="text-lg leading-normal font-normal pt-5 w-full">
-                NajmAI offers seamless integration with a variety of popular
-                design and project management tools, ensuring a smooth and
-                efficient workflow.
+                NajmAI seamlessly connects with your favorite tools, automating
+                workflows and enhancing efficiency with AI-driven intelligence.
               </p>
             </h1>
+
             <div className="h-full overflow-hidden hidden md:flex">
               {fakeLogosForSlider.map((group, index) => (
                 <InlineSlider
@@ -469,14 +475,14 @@ export default function Home() {
 
         <section className="pt-40">
           <h1 className="text-white header_text">
-            Customer <span className="text-purple">Success</span> Stroies
+            Customer <span className="text-purple">Success Stories</span>
           </h1>
           <div className="flex flex-col md:flex-row justify-between">
             <p className="subheader_text w-full md:w-1/2">
-              Discover how our platform has helped businesses create outstanding
-              content effortlessly. Hear directly from our users about their
-              success and satisfaction.
+              See how businesses leverage Jasper Azerbaijan to streamline workflows,
+              enhance efficiency, and achieve remarkable results with our great team.
             </p>
+
             <div className="flex gap-2 mt-10 mx-auto md:mx-0 md:mt-0">
               <button
                 className="size-10 bg-purple rounded-full flex justify-center items-center p-2"

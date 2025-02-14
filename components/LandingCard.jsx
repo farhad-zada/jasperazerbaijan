@@ -8,12 +8,11 @@ const LandingCard = () => {
       {/* Left Side - Text Content */}
       <div className="w-full text-center md:text-left space-y-5 text-white">
         <h1 className="  font-bold leading-tight header_text">
-          Your AI-Powered <br />
-          <span className="text-purple">Design</span> Assistant
+          Your Ultimate <br />
+          <span className="text-purple">Tech</span> Partner
         </h1>
         <p>
-          Unlock your creative potential. Seamlessly generate, customize, and
-          perfect your designs with cutting-edge AI technology.
+        Unlock your creative potential. Seamlessly generate, customize, and perfect your projects with cutting-edge AI and blockchain solutions.
         </p>
       </div>
 
