@@ -25,6 +25,10 @@ import FaqSection from "@components/FaqSection";
 import useBreakpoint from "@utils/hooks/useBreakpoint";
 import { Outfit } from "next/font/google";
 
+import { AiOutlineMobile } from "react-icons/ai";
+import { SiBitcoinsv } from "react-icons/si";
+import { AiOutlineGlobal } from "react-icons/ai";
+
 import cppSVG from "@public/assets/logos/cpp.svg";
 import jsSVG from "@public/assets/logos/js.svg";
 import pythonSVG from "@public/assets/logos/python.svg";
@@ -36,6 +40,10 @@ import angularSVG from "@public/assets/logos/angular.svg";
 import vueSVG from "@public/assets/logos/vue.svg";
 import expressSVG from "@public/assets/logos/express.svg";
 import nuxtSVG from "@public/assets/logos/nuxt.svg";
+
+import elgunTeam from "@public/assets/Teams/ElgunCEO.jpeg";
+import farhadTeam from "@public/assets/Teams/FerhadBACKEND.jpeg";
+import aliTeam from "@public/assets/Teams/AliFRONT.jpeg";
 
 const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
@@ -215,7 +223,7 @@ const cardData = [
       "Push bildirişləri",
       "API inteqrasiyaları",
     ],
-    logo: <HiArrowUpTray size={30} />,
+    logo: <AiOutlineMobile size={30} />,
   },
   {
     headText: "Blockchain Solutions",
@@ -227,7 +235,7 @@ const cardData = [
       "Blockchain consulting",
       "Security audit",
     ],
-    logo: <HiSparkles size={30} />,
+    logo: <SiBitcoinsv size={30} />,
   },
   {
     headText: "Web Solutions",
@@ -239,7 +247,7 @@ const cardData = [
       "Corporative",
     ],
     // descText: `Responsive design, Userfriendly interface, High performance, E-Commerce solutions, Corporative websites, Managment panels`,
-    logo: <HiMiniRocketLaunch size={30} />,
+    logo: <AiOutlineGlobal size={30} />,
   },
 ];
 
@@ -342,21 +350,21 @@ const fakeLogosForSlider = [
 const testimonials = [
   {
     id: 1,
-    image: avatarExample,
+    image: elgunTeam,
     name: "Elgun",
     comment:
       "Using this AI-powered design assistant has completely transformed the way I approach my projects. It’s like having a professional designer on call 24/7. Highly recommend it!",
   },
   {
     id: 2,
-    image: avatarExample,
+    image: farhadTeam,
     name: "Farhad",
     comment:
       "The design suggestions are spot on and the automated features save me so much time. I can focus more on creativity rather than getting bogged down in details.",
   },
   {
     id: 3,
-    image: avatarExample,
+    image: aliTeam,
     name: "Ali",
     comment:
       "This tool is a game-changer! It’s incredibly intuitive and the results are always impressive. I can't imagine working without it now.",
