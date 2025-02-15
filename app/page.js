@@ -179,21 +179,18 @@ function InlineSlider({ logos, reversed = false }) {
 
 const cardData = [
   {
-    headText: "Upload Brief",
-    descText:
-      "Share your vision, objectives, and challenges. We’ll pinpoint your needs and craft a clear, high-impact strategy.",
+    headText: "Mobil tətbiq inkişafı",
+    descText: `iOS & Android apps, Cross-platform solutions like Flutter, React-Native, Application optimization, Push notifications, API integrations,`,
     logo: <HiArrowUpTray size={30} />,
   },
   {
-    headText: "Generate Solutions",
-    descText:
-      "Our multidisciplinary team unites front-end, back-end, AI, and blockchain expertise to deliver tailored solutions—whether it’s automating workflows, building e-commerce platforms, or deploying smart contracts.",
+    headText: "Blockchain Solutions",
+    descText: `Building Smart Contracts for your specific needs, Supporting both on EVM & TVM, DeFi projects, NFT marketplace, Blockchain consulting, Security audit`,
     logo: <HiSparkles size={30} />,
   },
   {
-    headText: "Refine & Launch",
-    descText:
-      "We test, optimize, and perfect every detail before going live. Post-launch, we stay by your side to ensure you adapt and grow with evolving tech and market demands.",
+    headText: "Web Solutions",
+    descText: `Responsive design, Userfriendly interface, High performance, E-Commerce solutions, Corporative websites, Managment panels`,
     logo: <HiMiniRocketLaunch size={30} />,
   },
 ];
@@ -201,27 +198,32 @@ const cardData = [
 const featuresData = [
   {
     id: 1,
-    headText: "Accurate & Insightful Reports",
-    descText:
-      "Export real-time analytics and performance data in multiple formats. Make informed decisions with precise, high-resolution insights tailored to your needs.",
+    headText: "Innovative Approach",
+    descText: `Using edge-cutting technologies, Digital transformation experience, AI integration into bussinesses, IoT solutions, Big Data analysis`,
     photo: featureBlockImage1,
     reversed: false,
   },
   {
     id: 2,
-    headText: "Real-Time Collaboration",
+    headText: "Cost-Effective Solutions",
     descText:
-      "Seamlessly collaborate with your team in real-time. Share ideas, give feedback, and make edits together, no matter where you are.",
+      `Optimal budget planning, Transparant evalution, Flexible payment options, ROI focused approach`,
     photo: featureBlockImage2,
     reversed: true,
   },
   {
     id: 3,
-    headText: "Advanced Scheduling Tools",
-    descText:
-      "Plan and schedule your projects with ease. Use our scheduling tools to set deadlines, track milestones, and ensure timely delivery of your design work.",
+    headText: "Continues Support",
+    descText: `24/7 technical support, Regular updates, Performance monitoring, Security updates, Backup və restore services`,    
     photo: featureBlockImage3,
     reversed: false,
+  },
+  {
+    id: 3,
+    headText: "Hosting Service",
+    descText: `Reliable & Safe, High performance servers, 99.9% update guaranty, SSL certificates, Backup service, DDoS protection (4TB), 24/7 support`,    
+    photo: featureBlockImage3,
+    reversed: true,
   },
 ];
 
@@ -293,45 +295,31 @@ const testimonials = [
   {
     id: 1,
     image: avatarExample,
-    name: "John D.",
+    name: "Elgun",
     comment:
       "Using this AI-powered design assistant has completely transformed the way I approach my projects. It’s like having a professional designer on call 24/7. Highly recommend it!",
   },
   {
     id: 2,
     image: avatarExample,
-    name: "Michael S.",
+    name: "Farhad",
     comment:
       "The design suggestions are spot on and the automated features save me so much time. I can focus more on creativity rather than getting bogged down in details.",
   },
   {
     id: 3,
     image: avatarExample,
-    name: "David L.",
+    name: "Ali",
     comment:
       "This tool is a game-changer! It’s incredibly intuitive and the results are always impressive. I can't imagine working without it now.",
   },
   {
     id: 4,
     image: avatarExample,
-    name: "James K.",
+    name: "Mustafa",
     comment:
       "I was skeptical at first, but this AI assistant exceeded all my expectations. It’s easy to use and delivers professional-grade designs effortlessly.",
-  },
-  {
-    id: 5,
-    image: avatarExample,
-    name: "Robert P.",
-    comment:
-      "What an amazing tool! The AI understands my needs perfectly and helps me create stunning designs in no time. My productivity has doubled!",
-  },
-  {
-    id: 6,
-    image: avatarExample,
-    name: "William M.",
-    comment:
-      "I love how this AI-powered assistant blends technology and creativity. It’s a must-have for any designer looking to streamline their workflow and produce top-notch work.",
-  },
+  }
 ];
 
 export default function Home() {
@@ -453,11 +441,11 @@ export default function Home() {
         <section className="pt-40">
           <div className="w-full h-[600px] bg-darkGray rounded-3xl flex flex-col md:flex-row justify-between items-center pt-10">
             <h1 className="header_text font-medium leading-none md:leading-[40px] lg:leading-[50px] xl:leading-[60px] 2xl:leading-[72px] pl-10 w-full md:w-1/2">
-              Smart <br />
-              <span className="text-purbg-purple">AI Integration</span>
+              Flexible <br />
+              <span className="text-purbg-purple">to Choose the Platform</span>
               <p className="text-lg leading-normal font-normal pt-5 w-full">
-                NajmAI seamlessly connects with your favorite tools, automating
-                workflows and enhancing efficiency with AI-driven intelligence.
+                Jasper Azerbaijan helps you to make a solution and make that a bussines! 
+                We build on varios platforms for your needs!
               </p>
             </h1>
 
@@ -475,12 +463,11 @@ export default function Home() {
 
         <section className="pt-40">
           <h1 className="text-white header_text">
-            Customer <span className="text-purple">Success Stories</span>
+            Our <span className="text-purple">Team</span>
           </h1>
           <div className="flex flex-col md:flex-row justify-between">
             <p className="subheader_text w-full md:w-1/2">
-              See how businesses leverage Jasper Azerbaijan to streamline workflows,
-              enhance efficiency, and achieve remarkable results with our great team.
+              We have very talented and well motivated team
             </p>
 
             <div className="flex gap-2 mt-10 mx-auto md:mx-0 md:mt-0">
