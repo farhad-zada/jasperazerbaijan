@@ -206,22 +206,21 @@ const featuresData = [
   {
     id: 2,
     headText: "Cost-Effective Solutions",
-    descText:
-      `Optimal budget planning, Transparant evalution, Flexible payment options, ROI focused approach`,
+    descText: `Optimal budget planning, Transparant evalution, Flexible payment options, ROI focused approach`,
     photo: featureBlockImage2,
     reversed: true,
   },
   {
     id: 3,
     headText: "Continues Support",
-    descText: `24/7 technical support, Regular updates, Performance monitoring, Security updates, Backup və restore services`,    
+    descText: `24/7 technical support, Regular updates, Performance monitoring, Security updates, Backup və restore services`,
     photo: featureBlockImage3,
     reversed: false,
   },
   {
     id: 3,
     headText: "Hosting Service",
-    descText: `Reliable & Safe, High performance servers, 99.9% update guaranty, SSL certificates, Backup service, DDoS protection (4TB), 24/7 support`,    
+    descText: `Reliable & Safe, High performance servers, 99.9% update guaranty, SSL certificates, Backup service, DDoS protection (4TB), 24/7 support`,
     photo: featureBlockImage3,
     reversed: true,
   },
@@ -319,7 +318,7 @@ const testimonials = [
     name: "Mustafa",
     comment:
       "I was skeptical at first, but this AI assistant exceeded all my expectations. It’s easy to use and delivers professional-grade designs effortlessly.",
-  }
+  },
 ];
 
 export default function Home() {
@@ -444,8 +443,8 @@ export default function Home() {
               Flexible <br />
               <span className="text-purbg-purple">to Choose the Platform</span>
               <p className="text-lg leading-normal font-normal pt-5 w-full">
-                Jasper Azerbaijan helps you to make a solution and make that a bussines! 
-                We build on varios platforms for your needs!
+                Jasper Azerbaijan helps you to make a solution and make that a
+                bussines! We build on varios platforms for your needs!
               </p>
             </h1>
 

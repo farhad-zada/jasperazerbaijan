@@ -13,12 +13,12 @@ const NotFound = () => {
         </h1>
         <Link href={"/"}>
           <motion.h3
-            animate={{ y: [300, -300] }} // Yukarı aşağı hareket
+            animate={{ y: [300, -300] }}
             transition={{
               duration: 1,
-              bounce: 0.5, // Z
-              repeat: Infinity, // Sonsuz tekrar
-              ease: "easeInOut", // Daha yumuşak geçiş
+              bounce: 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
             className="text-white md:text-[#BBBBBB]/40 transition-all duration-300 md:hover:text-white underline underline-offset-2"
           >

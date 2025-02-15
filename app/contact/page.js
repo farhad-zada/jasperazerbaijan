@@ -20,7 +20,6 @@ const Page = () => {
     setLoading(true);
     setSuccess(false);
 
-    // Simulated API request
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log("Form Submitted:", data);

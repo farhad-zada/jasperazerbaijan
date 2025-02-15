@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import GoToTopButton from "@components/GoToTop";
+import ContactUsModal from "@components/ContactUsModal";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           <GoToTopButton />
           {children}
           <Footer />
+          <ContactUsModal />
         </SmoothScroll>
       </body>
     </html>
