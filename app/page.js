@@ -25,6 +25,18 @@ import FaqSection from "@components/FaqSection";
 import useBreakpoint from "@utils/hooks/useBreakpoint";
 import { Outfit } from "next/font/google";
 
+import cppSVG from "@public/assets/logos/cpp.svg";
+import jsSVG from "@public/assets/logos/js.svg";
+import pythonSVG from "@public/assets/logos/python.svg";
+import javaSVG from "@public/assets/logos/java.svg";
+import csharpSVG from "@public/assets/logos/cSharp.svg";
+
+import reactSVG from "@public/assets/logos/react.svg";
+import angularSVG from "@public/assets/logos/angular.svg";
+import vueSVG from "@public/assets/logos/vue.svg";
+import expressSVG from "@public/assets/logos/express.svg";
+import nuxtSVG from "@public/assets/logos/nuxt.svg";
+
 const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
 const cardVariants = {
@@ -48,13 +60,19 @@ const fadeInScale = {
 
 function Card({ headText, descText, logo }) {
   return (
-    <div className="w-full bg-darkGray min-h-56 h-full flex flex-col p-4">
+    <div className="w-full bg-darkGray min-h-56 h-full flex flex-col p-4 rounded-2xl">
       <div className="size-16 bg-purple rounded-full flex justify-center items-center">
         {logo}
       </div>
       <div className="mt-14">
         <h3 className="subheader_text font-bold">{headText}</h3>
-        <p className="py-3 w-5/6 subheader_text">{descText}</p>
+        <ul className=" list-disc pl-10">
+          {descText.slice(0, 6).map((text, index) => (
+            <li key={index} className="text-[#BBBBBB] text-lg">
+              {text}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -180,17 +198,47 @@ function InlineSlider({ logos, reversed = false }) {
 const cardData = [
   {
     headText: "Mobil tətbiq inkişafı",
-    descText: `iOS & Android apps, Cross-platform solutions like Flutter, React-Native, Application optimization, Push notifications, API integrations,`,
+    descText: [
+      "iOS & Android tətbiqləri",
+      "Flutter, React-Native kimi çox platformalı həllər",
+      "Tətbiqin optimalizasiyası",
+      "Push bildirişləri",
+      "API inteqrasiyaları",
+      "iOS & Android tətbiqləri",
+      "Flutter, React-Native kimi çox platformalı həllər",
+      "Tətbiqin optimalizasiyası",
+      "Push bildirişləri",
+      "API inteqrasiyaları",
+      "iOS & Android tətbiqləri",
+      "Flutter, React-Native kimi çox platformalı həllər",
+      "Tətbiqin optimalizasiyası",
+      "Push bildirişləri",
+      "API inteqrasiyaları",
+    ],
     logo: <HiArrowUpTray size={30} />,
   },
   {
     headText: "Blockchain Solutions",
-    descText: `Building Smart Contracts for your specific needs, Supporting both on EVM & TVM, DeFi projects, NFT marketplace, Blockchain consulting, Security audit`,
+    descText: [
+      "Building Smart Contracts for your specific needs",
+      "Supporting both on EVM & TVM",
+      "DeFi projects",
+      "NFT marketplace",
+      "Blockchain consulting",
+      "Security audit",
+    ],
     logo: <HiSparkles size={30} />,
   },
   {
     headText: "Web Solutions",
-    descText: `Responsive design, Userfriendly interface, High performance, E-Commerce solutions, Corporative websites, Managment panels`,
+    descText: [
+      "Responsive design",
+      "Userfriendly interface",
+      "High performance",
+      "E-Commerce solutions",
+      "Corporative",
+    ],
+    // descText: `Responsive design, Userfriendly interface, High performance, E-Commerce solutions, Corporative websites, Managment panels`,
     logo: <HiMiniRocketLaunch size={30} />,
   },
 ];
@@ -261,21 +309,22 @@ const fakeLogosForSlider = [
   {
     id: 1,
     logos: [
-      { id: 1, src: logo, alt: "logo" },
-      { id: 2, src: logo, alt: "logo" },
-      { id: 3, src: logo, alt: "logo" },
-      { id: 4, src: logo, alt: "logo" },
-      { id: 5, src: logo, alt: "logo" },
+      { id: 1, src: cppSVG, alt: "cppSVG" },
+      { id: 2, src: jsSVG, alt: "jsSVG" },
+      { id: 3, src: pythonSVG, alt: "pythonSVG" },
+      { id: 4, src: javaSVG, alt: "javaSVG" },
+      { id: 5, src: csharpSVG, alt: "csharpSVG" },
     ],
   },
   {
+    // frameworks such as react, angular, vue, next.js, nuxt.js
     id: 2,
     logos: [
-      { id: 1, src: logo, alt: "logo" },
-      { id: 2, src: logo, alt: "logo" },
-      { id: 3, src: logo, alt: "logo" },
-      { id: 4, src: logo, alt: "logo" },
-      { id: 5, src: logo, alt: "logo" },
+      { id: 1, src: reactSVG, alt: "reactSVG" },
+      { id: 2, src: angularSVG, alt: "angularSVG" },
+      { id: 3, src: vueSVG, alt: "vueSVG" },
+      { id: 4, src: expressSVG, alt: "expressSVG" },
+      { id: 5, src: nuxtSVG, alt: "nuxtSVG" },
     ],
   },
   {
@@ -378,7 +427,7 @@ export default function Home() {
             market.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
             {cardData.map((card, index) => (
               <motion.div
                 key={index}

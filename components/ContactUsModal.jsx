@@ -144,11 +144,6 @@ const ContactForm = () => {
           transition={{ duration: 0.5, repeat: 1 }}
           placeholder="Enter your email"
         />
-        {errors.email && (
-          <p className="text-red-500 text-sm py-1 mt-1 pl-2">
-            {errors.email.message}
-          </p>
-        )}
       </div>
 
       <div className="text-left">
