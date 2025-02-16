@@ -60,14 +60,10 @@ const Pricing = ({ onHomePage }) => {
     <div
       className={`${!onHomePage ? "text-center mt-0" : "mt-40"}  text-white`}
     >
-      {/* <h1 className="header_text font-bold leading-none 2xl:leading-[80px]">
-        Affordable Plans <br></br> for{" "}
-        <span className="text-purple"> Every Need</span>
-      </h1> */}
       <HeaderTitle
         text={"Affordable Plans for Every Need"}
         highlight={["Every", "Need"]}
-        br={["Plans"]} // Plans kelimesinden sonra <br /> ekle
+        br={["Plans"]}
       />
       <p
         className={`${

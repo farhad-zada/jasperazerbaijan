@@ -34,7 +34,7 @@ const ContactUsModal = ({ closeModal }) => {
       <div className="bg-darkGray p-6 rounded-lg shadow-lg w-full max-w-lg relative">
         <button
           onClick={closeModal}
-          className="absolute top-5.5 right-4  size-9 bg-purple rounded-full"
+          className="md:hidden absolute top-5.5 right-4  size-9 bg-purple rounded-full"
         >
           ✕
         </button>

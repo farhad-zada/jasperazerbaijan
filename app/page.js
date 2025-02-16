@@ -45,6 +45,7 @@ import { MdInsights } from "react-icons/md";
 import { FaRocket } from "react-icons/fa";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { TbTargetArrow } from "react-icons/tb";
+import GetStartedButton from "@components/GetStartedButton";
 
 const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
@@ -107,9 +108,9 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
           <div className="flex flex-col w-1/2">
             <HeaderTitle text={headText} highlight={[]} />
             <p className="py-3 w-1/2 subheader_text">{descText}</p>
-            <button className="bg-purple rounded-2xl p-4 w-40">
-              Get Started
-            </button>
+            <div className="w-40">
+              <GetStartedButton />
+            </div>
           </div>
         </div>
       ) : (
@@ -119,9 +120,9 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
               {headText}
             </h3>
             <p className="py-3 w-1/2 subheader_text">{descText}</p>
-            <button className="bg-purple rounded-2xl p-4 w-40">
-              Get Started
-            </button>
+            <div className="w-40">
+              <GetStartedButton />
+            </div>
           </div>
           <Image
             src={photo}

@@ -15,6 +15,7 @@ const logos = [
 
 const InfiniteSlider = () => {
   return (
+    // TODO: ASAGI KESILMIR, YUXQRI KESILIR. DUZELT
     <div className="overflow-hidden w-full mx-auto py-6 relative z-[1]">
       <motion.div
         className="flex space-x-8 w-max"

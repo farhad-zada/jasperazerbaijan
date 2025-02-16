@@ -26,11 +26,11 @@ const listItem = {
 
 const Navbar = () => {
   const ref = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   useOutsideClick(ref, () => {
     if (isMenuOpen) setIsMenuOpen(false);
   });
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
     <div className="w-screen bg-black h-20 flex items-center justify-center z-[40] py-16">
@@ -63,19 +63,19 @@ const Navbar = () => {
 
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, scale: 0.9, y: -10 }}
+            initial={{ opacity: 0, scale: 0.9, x: -100 }}
             animate={
               isMenuOpen
-                ? { opacity: 1, scale: 1, y: 0 }
-                : { opacity: 0, scale: 0.9, y: -10 }
+                ? { opacity: 1, scale: 1, x: 100 }
+                : { opacity: 0, scale: 0.9, x: -100 }
             }
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className={`absolute right-0 mt-4 w-48 bg-darkGray text-white rounded-lg shadow-lg p-3 ${
+            className={` absolute md:right-40 md:-top-[16px] top-16 right-24 md:mt-4 md:w-80 bg-darkGray text-white rounded-lg shadow-lg p-3 w-screen h-40 md:h-full ${
               isMenuOpen ? "block" : "hidden"
             } z-[50]`}
           >
             <motion.ul
-              className="space-y-2 mt-10 overflow-hidden"
+              className=" overflow-hidden flex  gap-4  items-center justify-center flex-col md:flex-row "
               variants={staggeredList}
               initial="hidden"
               animate="visible"
@@ -83,7 +83,7 @@ const Navbar = () => {
               {dropdownItems.map((item, index) => (
                 <motion.li
                   key={index}
-                  className="hover:underline cursor-pointer transition duration-200"
+                  className="hover:underline cursor-pointer transition duration-200 "
                   variants={listItem}
                   onClick={() => {
                     if (item.isNewPage) {

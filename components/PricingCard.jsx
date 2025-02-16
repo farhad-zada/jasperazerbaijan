@@ -3,6 +3,7 @@
 import Image from "@node_modules/next/image";
 import { motion } from "framer-motion";
 import useBreakpoint from "@utils/hooks/useBreakpoint";
+import GetStartedButton from "./GetStartedButton";
 
 const PricingCard = ({
   id,
@@ -66,13 +67,21 @@ const PricingCard = ({
         </div>
       </div>
 
-      <button
+      <GetStartedButton
+        className={`${
+          highlight
+            ? "bg-white text-black hover:bg-white/10"
+            : "bg-transparent text-purple"
+        } border`}
+      />
+
+      {/* <button
         className={`mt-auto rounded-2xl p-4 w-full border ${
           highlight ? "bg-white text-black" : "bg-transparent text-purbg-purple"
         }`}
       >
         Get Started
-      </button>
+      </button> */}
     </motion.div>
   );
 };
