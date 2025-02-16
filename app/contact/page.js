@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { CheckCircle, Loader2 } from "lucide-react";
 import FAQ from "@components/FaqSection";
+import HeaderTitle from "@components/HeaderTitle";
 
 const Page = () => {
   const {
@@ -33,9 +34,8 @@ const Page = () => {
   return (
     <div className="w-screen bg-black text-white">
       <div className="w-11/12 mx-auto text-center">
-        <h1 className="font-semibold tracking-[5px] header_text">
-          Contact <span className="text-purple">Us</span>
-        </h1>
+        <HeaderTitle text={"Contact Us"} highlight={["Us"]} />
+
         <p className=" w-full lg:w-2/5 mx-auto mt-4">
           Have questions or need help? Fill out the form below, and we'll get
           back to you promptly. We're here to assist you!

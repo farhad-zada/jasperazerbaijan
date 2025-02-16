@@ -3,56 +3,7 @@
 import React from "react";
 import PricingCard from "./PricingCard";
 import HeaderTitle from "./HeaderTitle";
-
-const priceDatas = [
-  {
-    id: 1,
-    planType: "Free",
-    monthlyPrice: 0,
-    yearlyPrie: 0,
-    playTypeDescription: "Free Forever",
-    highlight: false,
-    features: [
-      "Basic AI-generated designs",
-      "Access to customization tools",
-      "Standard templates library",
-      "5 projects per month",
-    ],
-  },
-  {
-    id: 2,
-    planType: "Basic",
-    monthlyPrice: 14.99,
-    yearlyPrie: 11.93,
-    playTypeDescription: "Billed ",
-    highlight: true,
-    features: [
-      "Advanced AI-generated designs",
-      "Full access to customization tools",
-      "Premium templates library",
-      "Unlimited projects",
-      "Real-time collaboration",
-      "Priority email support",
-    ],
-  },
-  {
-    id: 3,
-    planType: "Pro",
-    monthlyPrice: 29.99,
-    yearlyPrie: 24.93,
-    playTypeDescription: "Billed ",
-    highlight: false,
-    features: [
-      "All features included in Pro Plan",
-      "Dedicated account manager",
-      "Custom AI solutions and designs",
-      "Onboarding and training sessions",
-      "24/7 priority support",
-      "Advanced analytics and reporting",
-      "Secure cloud storage",
-    ],
-  },
-];
+import { pricesData } from "@datas/data";
 
 const Pricing = ({ onHomePage }) => {
   const [isMontlyPrice, setIsMontlyPrice] = React.useState(false);
@@ -95,7 +46,7 @@ const Pricing = ({ onHomePage }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {priceDatas.map((data) => (
+        {pricesData.map((data) => (
           <PricingCard
             key={data.id}
             {...data}

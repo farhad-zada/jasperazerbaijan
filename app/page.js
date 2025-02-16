@@ -1,51 +1,30 @@
 "use client";
 
 import LandingCard from "@components/LandingCard";
-import avatarExample from "@public/assets/avatarExample.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 import { useState, useCallback } from "react";
 
 import Slider from "@components/Slider";
-import { HiArrowUpTray } from "react-icons/hi2";
 import Image from "@node_modules/next/image";
-import featureBlockImage1 from "@public/assets/featureBlockImage1.png";
-import featureBlockImage2 from "@public/assets/featureBlockImage2.png";
-import featureBlockImage3 from "@public/assets/featureBlockImage3.png";
+
 import Pricing from "@components/Pricing";
-import logo from "@/public/assets/inlineSliderLogo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import CustomerReviewCard from "@components/CustomerReviewCard";
 import FaqSection from "@components/FaqSection";
 import useBreakpoint from "@utils/hooks/useBreakpoint";
 import { Outfit } from "next/font/google";
 
-import { AiOutlineMobile } from "react-icons/ai";
-import { SiBitcoinsv } from "react-icons/si";
-import { AiOutlineGlobal } from "react-icons/ai";
-
-import cppSVG from "@public/assets/logos/cpp.svg";
-import jsSVG from "@public/assets/logos/js.svg";
-import pythonSVG from "@public/assets/logos/python.svg";
-import javaSVG from "@public/assets/logos/java.svg";
-import csharpSVG from "@public/assets/logos/cSharp.svg";
-
-import reactSVG from "@public/assets/logos/react.svg";
-import angularSVG from "@public/assets/logos/angular.svg";
-import vueSVG from "@public/assets/logos/vue.svg";
-import expressSVG from "@public/assets/logos/express.svg";
-import nuxtSVG from "@public/assets/logos/nuxt.svg";
-
-import elgunTeam from "@public/assets/Teams/ElgunCEO.jpeg";
-import farhadTeam from "@public/assets/Teams/FerhadBACKEND.jpeg";
-import aliTeam from "@public/assets/Teams/AliFRONT.jpeg";
 import HeaderTitle from "@components/HeaderTitle";
 
-import { MdInsights } from "react-icons/md";
-import { FaRocket } from "react-icons/fa";
-import { AiFillThunderbolt } from "react-icons/ai";
-import { TbTargetArrow } from "react-icons/tb";
 import GetStartedButton from "@components/GetStartedButton";
+import {
+  featuresData,
+  servicesCardData,
+  sizesBasedCardData,
+  teamMembersData,
+  threeColInfiniteSliderLogosData,
+} from "@datas/data";
 
 const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
@@ -203,181 +182,6 @@ function InlineSlider({ logos, reversed = false }) {
   );
 }
 
-const cardData = [
-  {
-    headText: "Mobil tətbiq inkişafı",
-    descText: [
-      "iOS & Android tətbiqləri",
-      "Flutter, React-Native kimi çox platformalı həllər",
-      "Tətbiqin optimalizasiyası",
-      "Push bildirişləri",
-      "API inteqrasiyaları",
-      "iOS & Android tətbiqləri",
-      "Flutter, React-Native kimi çox platformalı həllər",
-      "Tətbiqin optimalizasiyası",
-      "Push bildirişləri",
-      "API inteqrasiyaları",
-      "iOS & Android tətbiqləri",
-      "Flutter, React-Native kimi çox platformalı həllər",
-      "Tətbiqin optimalizasiyası",
-      "Push bildirişləri",
-      "API inteqrasiyaları",
-    ],
-    logo: <AiOutlineMobile size={30} />,
-  },
-  {
-    headText: "Blockchain Solutions",
-    descText: [
-      "Building Smart Contracts for your specific needs",
-      "Supporting both on EVM & TVM",
-      "DeFi projects",
-      "NFT marketplace",
-      "Blockchain consulting",
-      "Security audit",
-    ],
-    logo: <SiBitcoinsv size={30} />,
-  },
-  {
-    headText: "Web Solutions",
-    descText: [
-      "Responsive design",
-      "Userfriendly interface",
-      "High performance",
-      "E-Commerce solutions",
-      "Corporative",
-    ],
-    // descText: `Responsive design, Userfriendly interface, High performance, E-Commerce solutions, Corporative websites, Managment panels`,
-    logo: <AiOutlineGlobal size={30} />,
-  },
-];
-
-const featuresData = [
-  {
-    id: 1,
-    headText: "Innovative Approach",
-    descText: `Using edge-cutting technologies, Digital transformation experience, AI integration into bussinesses, IoT solutions, Big Data analysis`,
-    photo: featureBlockImage1,
-    reversed: false,
-  },
-  {
-    id: 2,
-    headText: "Cost-Effective Solutions",
-    descText: `Optimal budget planning, Transparant evalution, Flexible payment options, ROI focused approach`,
-    photo: featureBlockImage2,
-    reversed: true,
-  },
-  {
-    id: 3,
-    headText: "Continues Support",
-    descText: `24/7 technical support, Regular updates, Performance monitoring, Security updates, Backup və restore services`,
-    photo: featureBlockImage3,
-    reversed: false,
-  },
-  {
-    id: 3,
-    headText: "Hosting Service",
-    descText: `Reliable & Safe, High performance servers, 99.9% update guaranty, SSL certificates, Backup service, DDoS protection (4TB), 24/7 support`,
-    photo: featureBlockImage3,
-    reversed: true,
-  },
-];
-
-const kBasedCardData = [
-  {
-    headText: "Empower Your Decisions",
-    descText:
-      "Leverage AI-driven insights and automation to optimize your operations. Transform data into actionable strategies with cutting-edge technology.",
-    logo: <MdInsights size={32} />,
-    size: 1,
-  },
-  {
-    headText: "Redefine What's Possible",
-    descText:
-      "Harness AI and automation to streamline complex tasks, optimize workflows, and unlock new opportunities for growth.",
-    logo: <FaRocket size={32} />,
-    size: 2,
-  },
-  {
-    headText: "Efficiency Meets Innovation",
-    descText:
-      "Seamlessly integrate AI-powered solutions that enhance performance, automate processes, and drive smarter decision-making.",
-    logo: <AiFillThunderbolt size={32} />,
-    size: 2,
-  },
-  {
-    headText: "Unmatched Accuracy",
-    descText:
-      "Harness AI-driven precision for optimal performance. Our technology refines every process, ensuring efficiency and reliability in every task.",
-    logo: <TbTargetArrow size={32} />,
-    size: 1,
-  },
-];
-
-const fakeLogosForSlider = [
-  {
-    id: 1,
-    logos: [
-      { id: 1, src: cppSVG, alt: "cppSVG" },
-      { id: 2, src: jsSVG, alt: "jsSVG" },
-      { id: 3, src: pythonSVG, alt: "pythonSVG" },
-      { id: 4, src: javaSVG, alt: "javaSVG" },
-      { id: 5, src: csharpSVG, alt: "csharpSVG" },
-    ],
-  },
-  {
-    // frameworks such as react, angular, vue, next.js, nuxt.js
-    id: 2,
-    logos: [
-      { id: 1, src: reactSVG, alt: "reactSVG" },
-      { id: 2, src: angularSVG, alt: "angularSVG" },
-      { id: 3, src: vueSVG, alt: "vueSVG" },
-      { id: 4, src: expressSVG, alt: "expressSVG" },
-      { id: 5, src: nuxtSVG, alt: "nuxtSVG" },
-    ],
-  },
-  {
-    id: 3,
-    logos: [
-      { id: 1, src: logo, alt: "logo" },
-      { id: 2, src: logo, alt: "logo" },
-      { id: 3, src: logo, alt: "logo" },
-      { id: 4, src: logo, alt: "logo" },
-      { id: 5, src: logo, alt: "logo" },
-    ],
-  },
-];
-
-const testimonials = [
-  {
-    id: 1,
-    image: elgunTeam,
-    name: "Elgun",
-    comment:
-      "Using this AI-powered design assistant has completely transformed the way I approach my projects. It’s like having a professional designer on call 24/7. Highly recommend it!",
-  },
-  {
-    id: 2,
-    image: farhadTeam,
-    name: "Farhad",
-    comment:
-      "The design suggestions are spot on and the automated features save me so much time. I can focus more on creativity rather than getting bogged down in details.",
-  },
-  {
-    id: 3,
-    image: aliTeam,
-    name: "Ali",
-    comment:
-      "This tool is a game-changer! It’s incredibly intuitive and the results are always impressive. I can't imagine working without it now.",
-  },
-  {
-    id: 4,
-    image: avatarExample,
-    name: "Mustafa",
-    comment:
-      "I was skeptical at first, but this AI assistant exceeded all my expectations. It’s easy to use and delivers professional-grade designs effortlessly.",
-  },
-];
-
 export default function Home() {
   const isMobile = useBreakpoint();
 
@@ -387,21 +191,21 @@ export default function Home() {
   const slideLeft = useCallback(() => {
     setDirection(-1);
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1
+      prevIndex === 0 ? teamMembersData.length - 3 : prevIndex - 1
     );
   }, []);
 
   const slideRight = useCallback(() => {
     setDirection(1);
     setCurrentIndex((prevIndex) =>
-      prevIndex >= testimonials.length - 3 ? 0 : prevIndex + 1
+      prevIndex >= teamMembersData.length - 3 ? 0 : prevIndex + 1
     );
   }, []);
 
   const visibleTestimonials = [
-    testimonials[currentIndex],
-    testimonials[(currentIndex + 1) % testimonials.length],
-    testimonials[(currentIndex + 2) % testimonials.length],
+    teamMembersData[currentIndex],
+    teamMembersData[(currentIndex + 1) % teamMembersData.length],
+    teamMembersData[(currentIndex + 2) % teamMembersData.length],
   ];
 
   return (
@@ -437,7 +241,7 @@ export default function Home() {
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
-            {cardData.map((card, index) => (
+            {servicesCardData.map((card, index) => (
               <motion.div
                 key={index}
                 variants={cardVariants}
@@ -480,13 +284,13 @@ export default function Home() {
 
           <section className="space-y-4 mt-20">
             <div className="flex gap-5 md:flex-row flex-col">
-              {kBasedCardData.slice(0, 2).map((card, index) => (
+              {sizesBasedCardData.slice(0, 2).map((card, index) => (
                 <SizesBasedCard key={index} {...card} />
               ))}
             </div>
             <div className="flex gap-5 md:flex-row flex-col">
-              {kBasedCardData
-                .slice(2, kBasedCardData.length)
+              {sizesBasedCardData
+                .slice(2, sizesBasedCardData.length)
                 .map((card, index) => (
                   <SizesBasedCard key={index} {...card} />
                 ))}
@@ -511,7 +315,7 @@ export default function Home() {
             </div>
 
             <div className="h-full overflow-hidden hidden md:flex w-full">
-              {fakeLogosForSlider.map((group, index) => (
+              {threeColInfiniteSliderLogosData.map((group, index) => (
                 <InlineSlider
                   key={index}
                   logos={group.logos}
