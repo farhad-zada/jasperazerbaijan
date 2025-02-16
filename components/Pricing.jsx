@@ -68,7 +68,7 @@ const Pricing = ({ onHomePage }) => {
       <p
         className={`${
           !onHomePage && "text-center mx-auto"
-        } w-full md:w-1/2 mt-10`}
+        } w-full md:w-1/2 mt-10 xl:text-xl 2xl:text-2xl`}
       >
         Choose the perfect plan for your design projects, from startups to
         enterprises. Our pricing tiers are designed to offer flexibility and

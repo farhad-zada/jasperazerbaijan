@@ -18,7 +18,7 @@ const CustomerReviewCard = ({ image, name, comment }) => {
           className="rounded-full"
           alt={`${name} photos`}
         />
-        <h3>{name}</h3>
+        <h3 className="text-2xl">{name}</h3>
       </div>
       <p className="">{comment}</p>
     </motion.div>
