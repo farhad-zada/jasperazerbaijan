@@ -70,12 +70,12 @@ const fadeInScale = {
 
 function Card({ headText, descText, logo }) {
   return (
-    <div className="w-full bg-darkGray min-h-56 h-full flex flex-col p-4 rounded-2xl">
+    <div className="w-full bg-darkGray min-h-56 h-full flex flex-col p-4 rounded-2xl pb-8">
       <div className="size-16 bg-purple rounded-full flex justify-center items-center">
         {logo}
       </div>
       <div className="mt-14">
-        <h3 className="subheader_text font-bold">{headText}</h3>
+        <h3 className="text-2xl 2xl:text-3xl font-bold pb-4">{headText}</h3>
         <ul className=" list-disc pl-10">
           {descText.slice(0, 6).map((text, index) => (
             <li key={index} className="text-[#BBBBBB] text-lg">
@@ -109,7 +109,7 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             <HeaderTitle text={headText} highlight={[]} />
             <p className="py-3 w-1/2 subheader_text">{descText}</p>
             <div className="w-40">
-              <GetStartedButton />
+              <GetStartedButton className={"bg-purple"} />
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             </h3>
             <p className="py-3 w-1/2 subheader_text">{descText}</p>
             <div className="w-40">
-              <GetStartedButton />
+              <GetStartedButton className={"bg-purple"} />
             </div>
           </div>
           <Image
@@ -412,14 +412,6 @@ export default function Home() {
         <LandingCard />
         <Slider />
         <section className="pt-40">
-          {/* <motion.h1
-            className="header_text font-bold w-full leading-[46px] lg:h-14 2xl:h-20"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            Unleash Your <span className="text-purple h-full">Potential</span>
-          </motion.h1> */}
           <HeaderTitle
             text="Unleash Your Potential"
             highlight="Potential"

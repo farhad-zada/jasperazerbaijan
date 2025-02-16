@@ -70,7 +70,7 @@ const PricingCard = ({
       <GetStartedButton
         className={`${
           highlight
-            ? "bg-white text-black hover:bg-white/10"
+            ? "bg-white text-black hover:!bg-white/10"
             : "bg-transparent text-purple"
         } border`}
       />
