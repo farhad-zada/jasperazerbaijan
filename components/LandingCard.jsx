@@ -1,18 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import photo from "@/public/assets/landingAsset.png";
+import HeaderTitle from "./HeaderTitle";
 
 const LandingCard = () => {
   return (
     <section className="w-full bg-darkGray rounded-[40px] relative flex flex-col md:flex-row items-center  md:h-[80vh] overflow-hidden p-6 md:p-12">
       {/* Left Side - Text Content */}
       <div className="w-full text-center md:text-left space-y-5 text-white">
-        <h1 className="  font-bold leading-tight header_text">
-          Your Ultimate <br />
-          <span className="text-purple">Tech</span> Partner
-        </h1>
+        <HeaderTitle text={"Your Ultimate Tech Partner"} highlight={["Tech"]} />
         <p>
-        Unlock your creative potential. Seamlessly generate, customize, and perfect your projects with cutting-edge AI and blockchain solutions.
+          Unlock your creative potential. Seamlessly generate, customize, and
+          perfect your projects with cutting-edge AI and blockchain solutions.
         </p>
       </div>
 

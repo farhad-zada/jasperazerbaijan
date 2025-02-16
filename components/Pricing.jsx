@@ -2,6 +2,7 @@
 
 import React from "react";
 import PricingCard from "./PricingCard";
+import HeaderTitle from "./HeaderTitle";
 
 const priceDatas = [
   {
@@ -59,14 +60,19 @@ const Pricing = ({ onHomePage }) => {
     <div
       className={`${!onHomePage ? "text-center mt-0" : "mt-40"}  text-white`}
     >
-      <h1 className="header_text font-bold leading-none 2xl:leading-[80px]">
+      {/* <h1 className="header_text font-bold leading-none 2xl:leading-[80px]">
         Affordable Plans <br></br> for{" "}
         <span className="text-purple"> Every Need</span>
-      </h1>
+      </h1> */}
+      <HeaderTitle
+        text={"Affordable Plans for Every Need"}
+        highlight={["Every", "Need"]}
+        br={["Plans"]} // Plans kelimesinden sonra <br /> ekle
+      />
       <p
         className={`${
           !onHomePage && "text-center mx-auto"
-        } w-full md:w-1/2 mt-8`}
+        } w-full md:w-1/2 mt-10`}
       >
         Choose the perfect plan for your design projects, from startups to
         enterprises. Our pricing tiers are designed to offer flexibility and

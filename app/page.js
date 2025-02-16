@@ -2,17 +2,12 @@
 
 import LandingCard from "@components/LandingCard";
 import avatarExample from "@public/assets/avatarExample.png";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaChevronLeft,
-  FaChevronRight,
-} from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 import Slider from "@components/Slider";
-import { HiSparkles, HiArrowUpTray, HiMiniRocketLaunch } from "react-icons/hi2";
+import { HiArrowUpTray } from "react-icons/hi2";
 import Image from "@node_modules/next/image";
 import featureBlockImage1 from "@public/assets/featureBlockImage1.png";
 import featureBlockImage2 from "@public/assets/featureBlockImage2.png";
@@ -44,6 +39,12 @@ import nuxtSVG from "@public/assets/logos/nuxt.svg";
 import elgunTeam from "@public/assets/Teams/ElgunCEO.jpeg";
 import farhadTeam from "@public/assets/Teams/FerhadBACKEND.jpeg";
 import aliTeam from "@public/assets/Teams/AliFRONT.jpeg";
+import HeaderTitle from "@components/HeaderTitle";
+
+import { MdInsights } from "react-icons/md";
+import { FaRocket } from "react-icons/fa";
+import { AiFillThunderbolt } from "react-icons/ai";
+import { TbTargetArrow } from "react-icons/tb";
 
 const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
@@ -104,10 +105,8 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             alt={`${headText} photo`}
           />
           <div className="flex flex-col w-1/2">
-            <h3 className="header_text w-4/6 font-semibold leading-[72px]">
-              {headText}
-            </h3>
-            <p className="py-3 w-5/6 subheader_text">{descText}</p>
+            <HeaderTitle text={headText} highlight={[]} />
+            <p className="py-3 w-1/2 subheader_text">{descText}</p>
             <button className="bg-purple rounded-2xl p-4 w-40">
               Get Started
             </button>
@@ -119,7 +118,7 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             <h3 className="header_text w-4/6 font-semibold leading-[72px]">
               {headText}
             </h3>
-            <p className="py-3 w-5/6 subheader_text">{descText}</p>
+            <p className="py-3 w-1/2 subheader_text">{descText}</p>
             <button className="bg-purple rounded-2xl p-4 w-40">
               Get Started
             </button>
@@ -163,7 +162,7 @@ function SizesBasedCard({ headText, descText, logo, size }) {
         <p className="text-gray-300 w-5/6 text-lg md:text-lg 2xl:text-2xl">
           {descText}
         </p>
-        <div className="w-12 h-12 bg-purple rounded-full flex justify-center items-center">
+        <div className="size-16 bg-purple rounded-full flex justify-center items-center">
           {logo}
         </div>
       </div>
@@ -287,28 +286,28 @@ const kBasedCardData = [
     headText: "Empower Your Decisions",
     descText:
       "Leverage AI-driven insights and automation to optimize your operations. Transform data into actionable strategies with cutting-edge technology.",
-    logo: <HiArrowUpTray size={30} />,
+    logo: <MdInsights size={32} />,
     size: 1,
   },
   {
     headText: "Redefine What's Possible",
     descText:
       "Harness AI and automation to streamline complex tasks, optimize workflows, and unlock new opportunities for growth.",
-    logo: <HiArrowUpTray size={30} />,
+    logo: <FaRocket size={32} />,
     size: 2,
   },
   {
     headText: "Efficiency Meets Innovation",
     descText:
       "Seamlessly integrate AI-powered solutions that enhance performance, automate processes, and drive smarter decision-making.",
-    logo: <HiArrowUpTray size={30} />,
+    logo: <AiFillThunderbolt size={32} />,
     size: 2,
   },
   {
     headText: "Unmatched Accuracy",
     descText:
       "Harness AI-driven precision for optimal performance. Our technology refines every process, ensuring efficiency and reliability in every task.",
-    logo: <HiArrowUpTray size={30} />,
+    logo: <TbTargetArrow size={32} />,
     size: 1,
   },
 ];
@@ -412,14 +411,23 @@ export default function Home() {
         <LandingCard />
         <Slider />
         <section className="pt-40">
-          <motion.h1
+          {/* <motion.h1
             className="header_text font-bold w-full leading-[46px] lg:h-14 2xl:h-20"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Unleash Your <span className="text-purple h-full">Potential</span>
-          </motion.h1>
+          </motion.h1> */}
+          <HeaderTitle
+            text="Unleash Your Potential"
+            highlight="Potential"
+            animation={{
+              initial: { opacity: 0, y: -20 },
+              whileInView: { opacity: 1, y: 0 },
+              transition: { duration: 0.8, ease: "easeOut" },
+            }}
+          />
 
           <motion.p
             className="w-3/4 md:w-4/6 subheader_text pt-10"
@@ -465,10 +473,11 @@ export default function Home() {
           ))}
         </section>
         <section className="pt-40 text-wrap">
-          <h1 className="header_text font-semibold">
-            Transforming <br /> Innovation into{" "}
-            <span className="text-purbg-purple">Reality</span>
-          </h1>
+          <HeaderTitle
+            text={"Transforming Innovation into Reality"}
+            br={["Transforming"]}
+            highlight={["Reality"]}
+          />
           <p className="w-full md:w-1/2">
             Empower your vision with AI-driven precision. Our technology
             optimizes workflows, enhances automation, and brings intelligent
@@ -496,16 +505,19 @@ export default function Home() {
 
         <section className="pt-40">
           <div className="w-full h-[600px] bg-darkGray rounded-3xl flex flex-col md:flex-row justify-between items-center pt-10">
-            <h1 className="header_text font-medium leading-none md:leading-[40px] lg:leading-[50px] xl:leading-[60px] 2xl:leading-[72px] pl-10 w-full md:w-1/2">
-              Flexible <br />
-              <span className="text-purbg-purple">to Choose the Platform</span>
+            <div className=" w-11/12 md:w-1/2 pl-10">
+              <HeaderTitle
+                text={"Flexible to Choose the Platform"}
+                highlight={"Flexible"}
+              />
+
               <p className="text-lg leading-normal font-normal pt-5 w-full">
                 Jasper Azerbaijan helps you to make a solution and make that a
                 bussines! We build on varios platforms for your needs!
               </p>
-            </h1>
+            </div>
 
-            <div className="h-full overflow-hidden hidden md:flex">
+            <div className="h-full overflow-hidden hidden md:flex w-full">
               {fakeLogosForSlider.map((group, index) => (
                 <InlineSlider
                   key={index}
@@ -518,9 +530,10 @@ export default function Home() {
         </section>
 
         <section className="pt-40">
-          <h1 className="text-white header_text">
+          {/* <h1 className="text-white header_text">
             Our <span className="text-purple">Team</span>
-          </h1>
+          </h1> */}
+          <HeaderTitle text={"Our Team"} highlight={["Team"]} />
           <div className="flex flex-col md:flex-row justify-between">
             <p className="subheader_text w-full md:w-1/2">
               We have very talented and well motivated team

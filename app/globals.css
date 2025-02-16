@@ -20,6 +20,7 @@
 .header_text
 {
   font-size: clamp(3rem, 5vw, 10rem); 
+  line-height: clamp(3rem, 5vw, 10rem);
 }
 
 .subheader_text

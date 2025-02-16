@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import faqArrow from "@public/assets/faqArrowIcon.svg";
+import HeaderTitle from "./HeaderTitle";
 
 const fakeFaqData = [
   {
@@ -102,10 +103,11 @@ export default function FAQ() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="header_text text-white w-full  md:w-1/2 font-medium leading-none md:leading-[40px] lg:leading-[50px] xl:leading-[60px] 2xl:leading-[90px] ">
-            Frequently Asked <br />
-            <span className="text-purple">Questions</span>
-          </h1>
+          <HeaderTitle
+            text={"Frequently Asked Questions"}
+            highlight={["Questions"]}
+            br={["Frequently", "Asked"]}
+          />
           <p className="text-gray-400 mt-2 mb-6 w-1/2 hidden md:flex">
             Have questions about our AI-Powered Design Assistant? Find answers
             to the most common questions and learn how our platform can enhance
