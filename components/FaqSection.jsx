@@ -108,6 +108,7 @@ export default function FAQ() {
             text={"Frequently Asked Questions"}
             highlight={["Questions"]}
             br={["Frequently", "Asked"]}
+            className={"text-left"}
           />
           <p className="text-gray-400 mt-2 mb-6 w-1/2 hidden md:flex">
             Have questions about our AI-Powered Design Assistant? Find answers

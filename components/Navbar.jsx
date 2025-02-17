@@ -63,14 +63,14 @@ const Navbar = () => {
 
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, scale: 0.9, x: -100 }}
+            initial={{ opacity: 0, scale: 0.9, x: 100 }}
             animate={
               isMenuOpen
-                ? { opacity: 1, scale: 1, x: 100 }
-                : { opacity: 0, scale: 0.9, x: -100 }
+                ? { opacity: 1, scale: 1, x: -100 }
+                : { opacity: 0, scale: 0.9, x: 100 }
             }
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className={` absolute md:right-40 md:-top-[16px] top-16 right-24 md:mt-4 md:w-80 bg-darkGray text-white rounded-lg shadow-lg p-3 w-screen h-40 md:h-full ${
+            className={` absolute md:right-0 md:-top-[16px]  top-16 -right-[100px] overflow-hidden md:mt-4 md:w-80 bg-darkGray text-white rounded-lg shadow-lg p-3 w-40 h-40 md:h-full ${
               isMenuOpen ? "block" : "hidden"
             } z-[50]`}
           >
