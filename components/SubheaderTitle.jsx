@@ -1,7 +1,7 @@
 import useBreakpoint from "@utils/hooks/useBreakpoint";
 import { motion } from "framer-motion";
 
-const HeaderTitle = ({
+const SubheaderTitle = ({
   text,
   className,
   animation = {},
@@ -10,15 +10,15 @@ const HeaderTitle = ({
 }) => {
   const isMobile = useBreakpoint();
   return (
-    <motion.h1
-      className={`header_text font-bold w-full   ${className}`}
+    <motion.h3
+      className={` subheader_text  ${className}`}
       initial={animation.initial}
       whileInView={animation.whileInView}
       transition={animation.transition}
     >
       {text.split(" ").map((word, index) => {
         const isHighlighted = highlight.includes(word);
-        const isBreak = br.includes(word); // Eğer bu kelime br listesinde varsa, <br /> ekle
+        const isBreak = br.includes(word);
 
         return (
           <span
@@ -29,8 +29,8 @@ const HeaderTitle = ({
           </span>
         );
       })}
-    </motion.h1>
+    </motion.h3>
   );
 };
 
-export default HeaderTitle;
+export default SubheaderTitle;

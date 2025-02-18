@@ -27,3 +27,8 @@
 {
   font-size: clamp(1rem, 1.5vw, 5rem);  
 }
+
+.pricing_list_item
+{
+  font-size: clamp(1rem, 1.5vw, 2rem); 
+}

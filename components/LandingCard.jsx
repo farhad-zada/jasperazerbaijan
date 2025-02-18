@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import photo from "@/public/assets/landingAsset.png";
 import HeaderTitle from "./HeaderTitle";
+import SubheaderTitle from "./SubheaderTitle";
 
 const LandingCard = () => {
   return (
@@ -13,10 +14,11 @@ const LandingCard = () => {
           highlight={["Tech"]}
           br={"Ultimate"}
         />
-        <p>
-          Unlock your creative potential. Seamlessly generate, customize, and
-          perfect your projects with cutting-edge AI and blockchain solutions.
-        </p>
+        <SubheaderTitle
+          text={`Unlock your creative potential. Seamlessly generate, customize, and
+          perfect your projects with cutting-edge AI and blockchain solutions.`}
+          className={"w-full md:w-full py-0 md:py-5"}
+        />
       </div>
 
       {/* Right Side - Image */}

@@ -54,15 +54,15 @@ const PricingCard = ({
 
         <div>
           {features.map((feature, index) => (
-            <p key={index} className="py-2 flex gap-2 items-center">
+            <div key={index} className="py-2 flex gap-2 items-center">
               <Image
                 src={"/assets/PricingIcon.svg"}
                 width={20}
                 height={20}
                 alt="Image for features"
               />
-              {feature}
-            </p>
+              <p className="pricingClass">{feature}</p>
+            </div>
           ))}
         </div>
       </div>

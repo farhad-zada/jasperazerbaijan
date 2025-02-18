@@ -25,6 +25,7 @@ import {
   teamMembersData,
   threeColInfiniteSliderLogosData,
 } from "@datas/data";
+import SubheaderTitle from "@components/SubheaderTitle";
 
 const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
@@ -86,7 +87,8 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
           />
           <div className="flex flex-col w-1/2">
             <HeaderTitle text={headText} highlight={[]} />
-            <p className="py-3 w-1/2 subheader_text">{descText}</p>
+            <SubheaderTitle text={descText} className={"w-1/2 py-5"} />
+            {/* <p className="py-3 w-1/2 subheader_text">{descText}</p> */}
             <div className="w-40">
               <GetStartedButton className={"bg-purple"} />
             </div>
@@ -95,10 +97,9 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
       ) : (
         <div className="md:flex items-center justify-between w-full hidden">
           <div className="flex flex-col">
-            <h3 className="header_text w-4/6 font-semibold leading-[72px]">
-              {headText}
-            </h3>
-            <p className="py-3 w-1/2 subheader_text">{descText}</p>
+            <HeaderTitle text={headText} highlight={[]} />
+            <SubheaderTitle text={descText} className={"w-1/2 py-5"} />
+            {/* <p className="py-3 w-1/2 subheader_text">{descText}</p> */}
             <div className="w-40">
               <GetStartedButton className={"bg-purple"} />
             </div>
@@ -226,7 +227,13 @@ export default function Home() {
             }}
           />
 
-          <motion.p
+          <SubheaderTitle
+            text={
+              "At Jasper Azerbaijan, we don’t just build technology—we revolutionize the way businesses embrace the digital world. From AI-driven platforms and e-commerce solutions to secure blockchain contracts and custom backend architectures, our expert team is here to help you break boundaries and stand out in today’s fast-paced market."
+            }
+            className={"w-3/4 md:w-4/6 pt-5 md:pt-2 pl-2"}
+          />
+          {/* <motion.p
             className="w-3/4 md:w-4/6 subheader_text pt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -238,7 +245,7 @@ export default function Home() {
             contracts and custom backend architectures, our expert team is here
             to help you break boundaries and stand out in today’s fast-paced
             market.
-          </motion.p>
+          </motion.p> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
             {servicesCardData.map((card, index) => (
@@ -275,12 +282,13 @@ export default function Home() {
             br={["Transforming"]}
             highlight={["Reality"]}
           />
-          <p className="w-full md:w-1/2">
-            Empower your vision with AI-driven precision. Our technology
+          <SubheaderTitle
+            text={`Empower your vision with AI-driven precision. Our technology
             optimizes workflows, enhances automation, and brings intelligent
             solutions to complex challenges—turning bold ideas into real-world
-            impact.
-          </p>
+            impact.`}
+            className={"w-full md:w-1/2 py-5"}
+          />
 
           <section className="space-y-4 mt-20">
             <div className="flex gap-5 md:flex-row flex-col">
@@ -308,10 +316,11 @@ export default function Home() {
                 highlight={"Flexible"}
               />
 
-              <p className="text-lg leading-normal font-normal pt-5 w-full">
-                Jasper Azerbaijan helps you to make a solution and make that a
-                bussines! We build on varios platforms for your needs!
-              </p>
+              <SubheaderTitle
+                text={`Jasper Azerbaijan helps you to make a solution and make that a
+                bussines! We build on varios platforms for your needs!`}
+                className={"w-full pt-5"}
+              />
             </div>
 
             <div className="h-full overflow-hidden hidden md:flex w-full">
@@ -332,9 +341,13 @@ export default function Home() {
           </h1> */}
           <HeaderTitle text={"Our Team"} highlight={["Team"]} />
           <div className="flex flex-col md:flex-row justify-between">
-            <p className="subheader_text w-full md:w-1/2">
+            <SubheaderTitle
+              className={"w-full md:w-1/2 py-5"}
+              text={`We have very talented and well motivated team`}
+            />
+            {/* <p className="subheader_text w-full md:w-1/2">
               We have very talented and well motivated team
-            </p>
+            </p> */}
 
             <div className="flex gap-2 mt-10 mx-auto md:mx-0 md:mt-0">
               <button

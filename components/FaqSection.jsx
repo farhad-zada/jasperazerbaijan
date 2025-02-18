@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import faqArrow from "@public/assets/faqArrowIcon.svg";
 import HeaderTitle from "./HeaderTitle";
+import SubheaderTitle from "./SubheaderTitle";
 
 const fakeFaqData = [
   {
@@ -110,6 +111,7 @@ export default function FAQ() {
             br={["Frequently", "Asked"]}
             className={"text-left"}
           />
+
           <p className="text-gray-400 mt-2 mb-6 w-1/2 hidden md:flex">
             Have questions about our AI-Powered Design Assistant? Find answers
             to the most common questions and learn how our platform can enhance

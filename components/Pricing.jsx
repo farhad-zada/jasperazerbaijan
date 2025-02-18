@@ -4,6 +4,7 @@ import React from "react";
 import PricingCard from "./PricingCard";
 import HeaderTitle from "./HeaderTitle";
 import { pricesData } from "@datas/data";
+import SubheaderTitle from "./SubheaderTitle";
 
 const Pricing = ({ onHomePage }) => {
   const [isMontlyPrice, setIsMontlyPrice] = React.useState(false);
@@ -16,15 +17,14 @@ const Pricing = ({ onHomePage }) => {
         highlight={["Every", "Need"]}
         br={["Plans"]}
       />
-      <p
+      <SubheaderTitle
+        text={
+          "Choose the perfect plan for your design projects, from startups to enterprises. Our pricing tiers are designed to offer flexibility and value, ensuring you get the most out of our AI-powered design assistant."
+        }
         className={`${
           !onHomePage && "text-center mx-auto"
-        } w-full md:w-1/2 mt-10 xl:text-xl 2xl:text-2xl`}
-      >
-        Choose the perfect plan for your design projects, from startups to
-        enterprises. Our pricing tiers are designed to offer flexibility and
-        value, ensuring you get the most out of our AI-powered design assistant.
-      </p>
+        } w-full md:w-1/2 py-5`}
+      />
 
       <div className="mb-6 flex items-center space-x-2  justify-center mt-10">
         <span className={`${!isMontlyPrice ? "opacity-100" : "opacity-50"}`}>
