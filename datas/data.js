@@ -50,9 +50,10 @@ export const servicesCardData = [
   },
 ];
 
-import featureBlockImage1 from "@public/assets/featureBlockImage1.png";
-import featureBlockImage2 from "@public/assets/featureBlockImage2.png";
-import featureBlockImage3 from "@public/assets/featureBlockImage3.png";
+import featureBlockImage1 from "@public/assets/featureBlockImage1.jpeg";
+import featureBlockImage2 from "@public/assets/featureBlockImage2.jpeg";
+import featureBlockImage3 from "@public/assets/featureBlockImage3.jpeg";
+import featureBlockImage4 from "@public/assets/featureBlockImage4.jpeg";
 
 export const featuresData = [
   {
@@ -80,7 +81,7 @@ export const featuresData = [
     id: 3,
     headText: "Hosting Service",
     descText: `Reliable & Safe, High performance servers, 99.9% update guaranty, SSL certificates, Backup service, DDoS protection (4TB), 24/7 support`,
-    photo: featureBlockImage3,
+    photo: featureBlockImage4,
     reversed: true,
   },
 ];

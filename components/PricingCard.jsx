@@ -61,7 +61,7 @@ const PricingCard = ({
                 height={20}
                 alt="Image for features"
               />
-              <p className="pricingClass">{feature}</p>
+              <p className="pricing_list_item">{feature}</p>
             </div>
           ))}
         </div>

@@ -80,6 +80,7 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
       {reversed ? (
         <div className="md:flex items-center justify-between w-full hidden">
           <Image
+            className="rounded-2xl"
             src={photo}
             width={400}
             height={600}
@@ -105,6 +106,7 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             </div>
           </div>
           <Image
+            className="rounded-2xl"
             src={photo}
             width={400}
             height={600}
