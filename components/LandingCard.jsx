@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import photo from "@/public/assets/landingAsset.jpeg";
+import photo from "@/public/assets/landingAsset.png";
 import HeaderTitle from "./HeaderTitle";
 import SubheaderTitle from "./SubheaderTitle";
 
@@ -25,8 +25,8 @@ const LandingCard = () => {
       <div className="w-full  flex justify-end mt-8 md:mt-0">
         <Image
           src={photo}
-          width={700}
-          height={700}
+          width={500}
+          height={500}
           alt="Landing Card Photo"
           className="object-contain max-w-full h-auto"
         />
