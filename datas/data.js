@@ -97,7 +97,7 @@ export const teamMembersData = [
     image: elgunTeam,
     name: "Elgun",
     comment:
-      "Using this AI-powered design assistant has completely transformed the way I approach my projects. It’s like having a professional designer on call 24/7. Highly recommend it!",
+      "Biz sadəcə proqram yazmırıq - biz gələcəyin texnoloji standartlarını müəyyən edirik. Mobil, web və blockchain həllərimizlə biznesinizi yeni səviyyəyə daşıyırıq. Uğurunuzun texnoloji tərəfdaşıyıq.",
   },
   {
     id: 2,

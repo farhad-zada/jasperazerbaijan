@@ -10,39 +10,51 @@ import SubheaderTitle from "./SubheaderTitle";
 const fakeFaqData = [
   {
     id: 1,
-    question: "How does the AI generate designs?",
+    question: "Layihənin qiyməti necə müəyyən edilir?",
     answer:
-      "The AI uses deep learning algorithms to analyze design patterns and generate creative outputs based on user input.",
+      "Hər layihə fərdi olaraq qiymətləndirilir. Qiymət layihənin mürəkkəbliyi, müddəti və tələb olunan resurslardan asılı olaraq formalaşır. Sizinlə ətraflı müzakirədən sonra dəqiq qiymət təklifi təqdim edirik.",
   },
   {
     id: 2,
-    question: "Can I customize the AI-generated designs?",
+    question: "Layihənin hazırlanma müddəti nə qədərdir?",
     answer:
-      "Yes, you can customize the designs by adjusting parameters and using our built-in editing tools.",
+      "Layihələrin müddəti onların həcmindən və mürəkkəbliyindən asılıdır. Kiçik layihələr 2-4 həftə, orta həcmli layihələr 1-3 ay, böyük layihələr isə 3-6 ay və daha çox vaxt ala bilər. Dəqiq müddət texniki tapşırıq hazır olduqdan sonra müəyyən edilir.",
   },
   {
     id: 3,
-    question: "What support options are available?",
+    question: "Hazır məhsulun texniki dəstəyi necə həyata keçirilir?",
     answer:
-      "We offer email support, live chat, and a community forum to help with any issues or questions.",
+      "Layihə təhvil verildikdən sonra 3 ay pulsuz texniki dəstək təqdim edirik. Bundan sonra isə texniki dəstək müqaviləsi əsasında xidmət göstəririk.",
   },
   {
     id: 4,
-    question: "Is there a free trial available?",
+    question: "Mövcud layihəni təkmilləşdirə və ya yeniləyə bilərsinizmi?",
     answer:
-      "Yes, we offer a 14-day free trial for new users to explore all features.",
+      "Bəli, mövcud layihələrin analizi və təkmilləşdirilməsi xidmətini təqdim edirik. Sistemin audit edilməsi və yenilənməsi üçün ətraflı təklif hazırlayırıq.",
   },
   {
     id: 5,
-    question: "How secure is my data?",
+    question: "Layihə prosesi zamanı müştəri ilə əlaqə necə qurulur?",
     answer:
-      "We use end-to-end encryption and follow industry standards to ensure your data remains secure.",
+      "Hər layihə üçün bir layihə meneceri təyin edilir və həftəlik hesabatlar təqdim olunur. İstənilən vaxt online görüşlər təşkil edə və layihənin gedişatını müzakirə edə bilərik.",
   },
   {
     id: 6,
-    question: "What integrations are available?",
+    question: "Məxfilik və təhlükəsizlik məsələləri necə təmin edilir?",
     answer:
-      "Our platform integrates with Figma, Adobe XD, and other popular design tools.",
+      "Bütün layihələr üçün NDA (məxfilik) müqaviləsi imzalayırıq. Məlumatların təhlükəsizliyi ən yüksək standartlara uyğun təmin edilir və mütəmadi olaraq təhlükəsizlik testləri aparılır.",
+  },
+  {
+    id: 7,
+    question: "Mobil tətbiqləriniz hansı platformalar üçün hazırlanır?",
+    answer:
+      "iOS və Android platformaları üçün native tətbiqlər, həmçinin cross-platform həllər təqdim edirik. Platforma seçimi sizin hədəf auditoriyanız və büdcənizə əsasən müəyyən edilir.",
+  },
+  {
+    id: 8,
+    question: "Blockchain həlləriniz hansı texnologiyalar əsasında qurulur?",
+    answer:
+      "Ethereum, Binance Smart Chain və digər aparıcı blockchain platformaları üzərində smart kontraktlar və DApp-lər hazırlayırıq. Layihənizin tələblərinə uyğun ən optimal blockchain platformasını seçirik.",
   },
 ];
 
@@ -113,9 +125,9 @@ export default function FAQ() {
           />
 
           <p className="text-gray-400 mt-2 mb-6 w-1/2 hidden md:flex">
-            Have questions about our AI-Powered Design Assistant? Find answers
-            to the most common questions and learn how our platform can enhance
-            your creative process.
+            Ən çox soruşulan sualları cavablandırdıq. Hələ də sualınız varsa,
+            bizimlə əlaqə saxlayın - komandamız sizə köməkçi olmaqdan məmnunluq
+            duyar.
           </p>
         </motion.div>
       </div>
