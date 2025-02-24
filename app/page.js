@@ -26,6 +26,8 @@ import {
   threeColInfiniteSliderLogosData,
 } from "@datas/data";
 import SubheaderTitle from "@components/SubheaderTitle";
+import ContactUs from "@components/ContactUs";
+import { handleGoSomewhere } from "@utils/handleGoSomewhere";
 
 const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
@@ -91,7 +93,10 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             <SubheaderTitle text={descText} className={"w-1/2 py-5"} />
             {/* <p className="py-3 w-1/2 subheader_text">{descText}</p> */}
             <div className="w-40">
-              <GetStartedButton className={"bg-purple"} />
+              <GetStartedButton
+                onClick={() => handleGoSomewhere("form")}
+                className={"bg-purple"}
+              />
             </div>
           </div>
         </div>
@@ -102,7 +107,10 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             <SubheaderTitle text={descText} className={"w-1/2 py-5"} />
             {/* <p className="py-3 w-1/2 subheader_text">{descText}</p> */}
             <div className="w-40">
-              <GetStartedButton className={"bg-purple"} />
+              <GetStartedButton
+                onClick={() => handleGoSomewhere("form")}
+                className={"bg-purple"}
+              />
             </div>
           </div>
           <Image
@@ -121,9 +129,15 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             {headText}
           </h3>
           <p className="py-3 subheader_text">{descText}</p>
-          <button className="bg-purple rounded-2xl p-4 w-40 mx-auto mb-4">
+          {/* <button className="bg-purple rounded-2xl p-4 w-40 mx-auto mb-4">
             Get Started
-          </button>
+          </button> */}
+          <GetStartedButton
+            className={"bg-purple rounded-2xl p-4 w-40 mx-auto mb-4"}
+            onClick={() => handleGoSomewhere("form")}
+          >
+            Get Started
+          </GetStartedButton>
         </div>
       </div>
     </motion.div>
@@ -398,6 +412,10 @@ export default function Home() {
         <section className="pt-40">
           <FaqSection />
         </section>
+
+        <div className="pt-40">
+          <ContactUs />
+        </div>
 
         <div className="bg-black w-full h-40"></div>
       </div>

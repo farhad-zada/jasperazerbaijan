@@ -4,6 +4,7 @@ import Image from "@node_modules/next/image";
 import { motion } from "framer-motion";
 import useBreakpoint from "@utils/hooks/useBreakpoint";
 import GetStartedButton from "./GetStartedButton";
+import { handleGoSomewhere } from "@utils/handleGoSomewhere";
 
 const PricingCard = ({
   id,
@@ -14,6 +15,7 @@ const PricingCard = ({
   highlight,
   features,
   isMonthly,
+  goodFor,
 }) => {
   const isMobile = useBreakpoint();
   const cardVariants = {
@@ -45,7 +47,8 @@ const PricingCard = ({
       <div className="flex-grow">
         <p className="text-left">{planType}</p>
         <h3 className="text-4xl font-semibold pt-4 pb-2.5">
-          ${isMonthly ? `${monthlyPrice}/m` : `${yearlyPrie}/y`}
+          <span className="font-serif font-light">₼</span>{" "}
+          {isMonthly ? `${monthlyPrice}/m` : `${yearlyPrie}/y`}
         </h3>
         <p className="pb-5">
           {playTypeDescription} {isMonthly ? " Monthly" : " Yearly"}
@@ -67,7 +70,16 @@ const PricingCard = ({
         </div>
       </div>
 
+      <div className="my-10">
+        <p>
+          <span className="font-extrabold">Who is it for:</span> {goodFor}
+        </p>
+      </div>
+      {/* <p className="font-normal">
+        <span className="font-extrabold">İdeal istifadəçilər:</span> {goodFor}
+      </p> */}
       <GetStartedButton
+        onClick={() => handleGoSomewhere("form")}
         className={`${
           highlight &&
           "bg-white text-black md:hover:shadow-[#4F00B9] md:hover:ring-2 md:hover:ring-[#621FBB] md:hover:shadow-lg"
