@@ -45,7 +45,7 @@ const PricingCard = ({
       <div className="flex-grow">
         <p className="text-left">{planType}</p>
         <h3 className="text-4xl font-semibold pt-4 pb-2.5">
-          ${isMonthly ? `${monthlyPrice}` : `${yearlyPrie}`}/m
+          ${isMonthly ? `${monthlyPrice}/m` : `${yearlyPrie}/y`}
         </h3>
         <p className="pb-5">
           {playTypeDescription} {isMonthly ? " Monthly" : " Yearly"}

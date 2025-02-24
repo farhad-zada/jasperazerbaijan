@@ -207,10 +207,10 @@ export const threeColInfiniteSliderLogosData = [
 export const pricesData = [
   {
     id: 1,
-    planType: "Free",
-    monthlyPrice: 0,
-    yearlyPrie: 0,
-    playTypeDescription: "Free Forever",
+    planType: "Basic",
+    monthlyPrice: 199,
+    yearlyPrie: 1499,
+    playTypeDescription: "Billed",
     highlight: false,
     features: [
       "Basic AI-generated designs",
@@ -221,9 +221,9 @@ export const pricesData = [
   },
   {
     id: 2,
-    planType: "Basic",
-    monthlyPrice: 14.99,
-    yearlyPrie: 11.93,
+    planType: "Normal",
+    monthlyPrice: 499,
+    yearlyPrie: 3999,
     playTypeDescription: "Billed ",
     highlight: true,
     features: [
@@ -237,9 +237,9 @@ export const pricesData = [
   },
   {
     id: 3,
-    planType: "Pro",
-    monthlyPrice: 29.99,
-    yearlyPrie: 24.93,
+    planType: "Premium",
+    monthlyPrice: 999,
+    yearlyPrie: 7999,
     playTypeDescription: "Billed ",
     highlight: false,
     features: [
