@@ -10,51 +10,52 @@ import SubheaderTitle from "./SubheaderTitle";
 const fakeFaqData = [
   {
     id: 1,
-    question: "Layihənin qiyməti necə müəyyən edilir?",
+    question: "How is the project price determined?",
     answer:
-      "Hər layihə fərdi olaraq qiymətləndirilir. Qiymət layihənin mürəkkəbliyi, müddəti və tələb olunan resurslardan asılı olaraq formalaşır. Sizinlə ətraflı müzakirədən sonra dəqiq qiymət təklifi təqdim edirik.",
+      "Each project is evaluated individually. The price is formed based on the complexity, duration, and required resources of the project. After a detailed discussion with you, we provide an exact price offer.",
   },
   {
     id: 2,
-    question: "Layihənin hazırlanma müddəti nə qədərdir?",
+    question: "How long does it take to develop a project?",
     answer:
-      "Layihələrin müddəti onların həcmindən və mürəkkəbliyindən asılıdır. Kiçik layihələr 2-4 həftə, orta həcmli layihələr 1-3 ay, böyük layihələr isə 3-6 ay və daha çox vaxt ala bilər. Dəqiq müddət texniki tapşırıq hazır olduqdan sonra müəyyən edilir.",
+      "The duration of projects depends on their size and complexity. Small projects take 2-4 weeks, medium-sized projects take 1-3 months, and large projects can take 3-6 months or longer. The exact duration is determined after the technical specifications are prepared.",
   },
   {
     id: 3,
-    question: "Hazır məhsulun texniki dəstəyi necə həyata keçirilir?",
+    question: "How is technical support for the finished product provided?",
     answer:
-      "Layihə təhvil verildikdən sonra 3 ay pulsuz texniki dəstək təqdim edirik. Bundan sonra isə texniki dəstək müqaviləsi əsasında xidmət göstəririk.",
+      "We provide free technical support for 3 months after the project is delivered. After that, technical support is provided based on a service agreement.",
   },
   {
     id: 4,
-    question: "Mövcud layihəni təkmilləşdirə və ya yeniləyə bilərsinizmi?",
+    question: "Can you improve or update an existing project?",
     answer:
-      "Bəli, mövcud layihələrin analizi və təkmilləşdirilməsi xidmətini təqdim edirik. Sistemin audit edilməsi və yenilənməsi üçün ətraflı təklif hazırlayırıq.",
+      "Yes, we offer services for analyzing and improving existing projects. We prepare a detailed proposal for auditing and updating the system.",
   },
   {
     id: 5,
-    question: "Layihə prosesi zamanı müştəri ilə əlaqə necə qurulur?",
+    question:
+      "How is communication with the client established during the project process?",
     answer:
-      "Hər layihə üçün bir layihə meneceri təyin edilir və həftəlik hesabatlar təqdim olunur. İstənilən vaxt online görüşlər təşkil edə və layihənin gedişatını müzakirə edə bilərik.",
+      "A project manager is assigned to each project, and weekly reports are provided. We can organize online meetings at any time to discuss the progress of the project.",
   },
   {
     id: 6,
-    question: "Məxfilik və təhlükəsizlik məsələləri necə təmin edilir?",
+    question: "How are confidentiality and security ensured?",
     answer:
-      "Bütün layihələr üçün NDA (məxfilik) müqaviləsi imzalayırıq. Məlumatların təhlükəsizliyi ən yüksək standartlara uyğun təmin edilir və mütəmadi olaraq təhlükəsizlik testləri aparılır.",
+      "We sign an NDA (confidentiality agreement) for all projects. Data security is ensured in accordance with the highest standards, and regular security tests are conducted.",
   },
   {
     id: 7,
-    question: "Mobil tətbiqləriniz hansı platformalar üçün hazırlanır?",
+    question: "Which platforms do your mobile applications support?",
     answer:
-      "iOS və Android platformaları üçün native tətbiqlər, həmçinin cross-platform həllər təqdim edirik. Platforma seçimi sizin hədəf auditoriyanız və büdcənizə əsasən müəyyən edilir.",
+      "We develop native applications for iOS and Android, as well as cross-platform solutions. The choice of platform is determined based on your target audience and budget.",
   },
   {
     id: 8,
-    question: "Blockchain həlləriniz hansı texnologiyalar əsasında qurulur?",
+    question: "Which technologies are your blockchain solutions based on?",
     answer:
-      "Ethereum, Binance Smart Chain və digər aparıcı blockchain platformaları üzərində smart kontraktlar və DApp-lər hazırlayırıq. Layihənizin tələblərinə uyğun ən optimal blockchain platformasını seçirik.",
+      "We develop smart contracts and DApps on Ethereum, Binance Smart Chain, and other leading blockchain platforms. We select the most optimal blockchain platform according to your project requirements.",
   },
 ];
 
@@ -125,9 +126,9 @@ export default function FAQ() {
           />
 
           <p className="text-gray-400 mt-2 mb-6 w-1/2 hidden md:flex">
-            Ən çox soruşulan sualları cavablandırdıq. Hələ də sualınız varsa,
-            bizimlə əlaqə saxlayın - komandamız sizə köməkçi olmaqdan məmnunluq
-            duyar.
+            We have answered the most frequently asked questions. If you still
+            have any questions, feel free to contact us – our team will be happy
+            to assist you.
           </p>
         </motion.div>
       </div>

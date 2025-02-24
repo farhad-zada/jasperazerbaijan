@@ -4,26 +4,27 @@ import { AiOutlineGlobal } from "react-icons/ai";
 
 export const servicesCardData = [
   {
-    headText: "Mobil tətbiq inkişafı",
+    headText: "Mobile App Development",
     descText: [
-      "iOS & Android tətbiqləri",
-      "Flutter, React-Native kimi çox platformalı həllər",
-      "Tətbiqin optimalizasiyası",
-      "Push bildirişləri",
-      "API inteqrasiyaları",
-      "iOS & Android tətbiqləri",
-      "Flutter, React-Native kimi çox platformalı həllər",
-      "Tətbiqin optimalizasiyası",
-      "Push bildirişləri",
-      "API inteqrasiyaları",
-      "iOS & Android tətbiqləri",
-      "Flutter, React-Native kimi çox platformalı həllər",
-      "Tətbiqin optimalizasiyası",
-      "Push bildirişləri",
-      "API inteqrasiyaları",
+      "iOS & Android applications",
+      "Cross-platform solutions like Flutter, React Native",
+      "Application optimization",
+      "Push notifications",
+      "API integrations",
+      "iOS & Android applications",
+      "Cross-platform solutions like Flutter, React Native",
+      "Application optimization",
+      "Push notifications",
+      "API integrations",
+      "iOS & Android applications",
+      "Cross-platform solutions like Flutter, React Native",
+      "Application optimization",
+      "Push notifications",
+      "API integrations",
     ],
     logo: <AiOutlineMobile size={30} />,
   },
+
   {
     headText: "Blockchain Solutions",
     descText: [
@@ -97,7 +98,7 @@ export const teamMembersData = [
     image: elgunTeam,
     name: "Elgun",
     comment:
-      "Biz sadəcə proqram yazmırıq - biz gələcəyin texnoloji standartlarını müəyyən edirik. Mobil, web və blockchain həllərimizlə biznesinizi yeni səviyyəyə daşıyırıq. Uğurunuzun texnoloji tərəfdaşıyıq.",
+      "We don’t just write code – we define the technological standards of the future. With our mobile, web, and blockchain solutions, we take your business to the next level. We are your technology partner in success.",
   },
   {
     id: 2,

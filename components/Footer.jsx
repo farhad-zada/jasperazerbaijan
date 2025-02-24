@@ -38,11 +38,17 @@ const Footer = () => {
         <p className="text-center text-gray-400 py-5">
           © 2025 Jasper Azerbaijan. All rights reserved.
         </p>
-        <Link href={"https://github.com/AliAgayevv"} target="_blank">
-          <p className="md:hover:underline underline-offset-2 text-purple md:text-white transition-all duration-300 md:hover:cursor-pointer md:hover:text-purple">
-            Created by Ali Agayevh
-          </p>
-        </Link>
+        <a
+          href="//www.dmca.com/Protection/Status.aspx?ID=a5776eb7-0004-489f-94a1-3888f37ea0cd"
+          title="DMCA.com Protection Status"
+          target="_blank"
+        >
+          {" "}
+          <img
+            src="https://images.dmca.com/Badges/dmca-badge-w150-5x1-07.png?ID=a5776eb7-0004-489f-94a1-3888f37ea0cd"
+            alt="DMCA.com Protection Status"
+          />
+        </a>{" "}
       </div>
     </footer>
   );
