@@ -216,14 +216,14 @@ export default function Home() {
   const slideLeft = useCallback(() => {
     setDirection(-1);
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? teamMembersData.length - 3 : prevIndex - 1
+      prevIndex <= 0 ? teamMembersData.length - 1 : prevIndex - 1
     );
   }, []);
 
   const slideRight = useCallback(() => {
     setDirection(1);
     setCurrentIndex((prevIndex) =>
-      prevIndex >= teamMembersData.length - 3 ? 0 : prevIndex + 1
+      prevIndex >= 0 ? (prevIndex + 1) % teamMembersData.length : 0
     );
   }, []);
 

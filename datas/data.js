@@ -87,7 +87,7 @@ export const featuresData = [
   },
 ];
 
-import avatarExample from "@public/assets/avatarExample.png";
+import mustafaTeam from "@public/assets/Teams/MustafaUXUİ.jpeg";
 import elgunTeam from "@public/assets/Teams/ElgunCEO.jpeg";
 import farhadTeam from "@public/assets/Teams/FerhadBACKEND.jpeg";
 import aliTeam from "@public/assets/Teams/AliFRONT.jpeg";
@@ -105,21 +105,21 @@ export const teamMembersData = [
     image: farhadTeam,
     name: "Farhad",
     comment:
-      "The design suggestions are spot on and the automated features save me so much time. I can focus more on creativity rather than getting bogged down in details.",
+      "We don’t just write code – we craft the backbone of your digital experiences. With every backend solution, we ensure scalability, reliability, and precision – driving your vision forward with every line of code.",
   },
   {
     id: 3,
     image: aliTeam,
     name: "Ali",
     comment:
-      "This tool is a game-changer! It’s incredibly intuitive and the results are always impressive. I can't imagine working without it now.",
+      "At the forefront of design and usability, we don’t just create interfaces – we build seamless experiences. Our frontend solutions are tailored to engage and inspire, making your digital presence unforgettable.",
   },
   {
     id: 4,
-    image: avatarExample,
+    image: mustafaTeam,
     name: "Mustafa",
     comment:
-      "I was skeptical at first, but this AI assistant exceeded all my expectations. It’s easy to use and delivers professional-grade designs effortlessly.",
+      "In every pixel, we see potential. With meticulous UX/UI design, we transform ideas into intuitive and stunning user experiences. We don’t just design – we innovate to captivate and engage.",
   },
 ];
 

@@ -63,7 +63,13 @@ const PricingCard = ({
       viewport={{ once: true }}
     >
       <div className="flex-grow">
-        {!additioanlServicesCard && <p className="text-left">{planType}</p>}
+        {!additioanlServicesCard ? (
+          <p className="text-left">{planType}</p>
+        ) : (
+          <h1 className="text-4xl font-semibold pt-4 pb-2.5">
+            Also we offer extra services{" "}
+          </h1>
+        )}
         <h3 className="text-4xl font-semibold pt-4 pb-2.5">
           {!additioanlServicesCard && (
             <div>
@@ -77,15 +83,15 @@ const PricingCard = ({
             {playTypeDescription} {isMonthly ? " Monthly" : " Yearly"}
           </p>
         )}
-        {!additioanlServicesCard && <hr className="mb-5" />}
+        <hr className="mb-5" />
 
         <div>
           {features.map((feature, index) => (
             <div key={index} className="py-2 flex gap-2 items-center">
               <Image
                 src={"/assets/PricingIcon.svg"}
-                width={20}
-                height={20}
+                width={16}
+                height={16}
                 alt="Image for features"
               />
               <p className="pricing_list_item opacity-90">{feature}</p>
