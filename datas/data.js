@@ -278,7 +278,7 @@ export const pricesData = [
     playTypeDescription: "Billed ",
     goodFor:
       "Medium-sized business websites, e-commerce stores, mobile app backends",
-    highlight: true,
+    highlight: false,
     features: [
       "50 GB SSD disk space",
       "500 GB monthly traffic",

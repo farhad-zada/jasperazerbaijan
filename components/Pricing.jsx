@@ -6,6 +6,17 @@ import HeaderTitle from "./HeaderTitle";
 import { pricesData } from "@datas/data";
 import SubheaderTitle from "./SubheaderTitle";
 
+const additioanlServices = [
+  "Domain Registration",
+  "Advanced Security Package",
+  "Custom Server Configuration",
+  "Website Migration Service",
+  "SEO Optimization Service",
+  "Website Speed Optimization",
+  "Blockchain Node Setup and Configuration",
+  "Mobile App Backend Integration",
+];
+
 const Pricing = ({ onHomePage }) => {
   const [isMontlyPrice, setIsMontlyPrice] = React.useState(false);
   return (
@@ -45,7 +56,7 @@ const Pricing = ({ onHomePage }) => {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {pricesData.map((data) => (
           <PricingCard
             key={data.id}
@@ -53,6 +64,11 @@ const Pricing = ({ onHomePage }) => {
             isMonthly={!isMontlyPrice ? true : false}
           />
         ))}
+        <PricingCard
+          highlight={true}
+          additioanlServicesCard={true}
+          features={additioanlServices}
+        />
       </div>
     </div>
   );

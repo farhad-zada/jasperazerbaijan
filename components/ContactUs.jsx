@@ -4,8 +4,13 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { CheckCircle, Loader2 } from "lucide-react";
-import FAQ from "@components/FaqSection";
 import HeaderTitle from "@components/HeaderTitle";
+
+const formCategories = [
+  { id: 1, inner: "Mobile App Development" },
+  { id: 2, inner: "Blockchain Solutions" },
+  { id: 3, inner: "Web Solutions" },
+];
 
 const ContactUs = () => {
   const {
@@ -24,6 +29,10 @@ const ContactUs = () => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log("Form Submitted:", data);
+    console.log(
+      "Selected Categories:",
+      selected.map((index) => formCategories[index - 1].inner)
+    );
     setLoading(false);
     setSuccess(true);
     reset();
@@ -31,6 +40,15 @@ const ContactUs = () => {
     setTimeout(() => setSuccess(false), 2000);
   };
 
+  const [selected, setSelected] = useState([]);
+  const handleSelect = (index) => {
+    setSelected((prev) => {
+      if (prev.includes(index)) {
+        return prev.filter((item) => item !== index);
+      }
+      return [...prev, index];
+    });
+  };
   return (
     <div className="w-full bg-black text-white">
       <div className=" text-center">
@@ -132,11 +150,27 @@ const ContactUs = () => {
               <p className="text-red-500 text-sm">{errors.message.message}</p>
             )}
           </div>
+          <div className="w-full h-auto flex flex-wrap justify-start gap-3 items-center mt-5">
+            {formCategories.map((data) => (
+              <button
+                key={data.id}
+                type="button"
+                onClick={() => handleSelect(data.id)}
+                className={`${
+                  selected.includes(data.id)
+                    ? "bg-purple text-white"
+                    : "bg-darkGray"
+                } rounded-lg px-3 py-1 border transition-all delay-200 h-full cursor-pointer`}
+              >
+                {data.inner}
+              </button>
+            ))}
+          </div>
 
           <motion.button
             type="submit"
             disabled={loading}
-            className={`w-full py-2 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
+            className={`w-full py-2 h-full rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
               success ? "bg-purple" : "bg-purple hover:bg-purple"
             }`}
             whileTap={{ scale: 0.95 }}
