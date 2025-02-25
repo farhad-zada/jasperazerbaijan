@@ -9,9 +9,9 @@ export const dropdownItems = [
   {
     id: 2,
     title: "Pricing",
-    isNewPage: true,
-    element: null,
-    path: "/pricing",
+    isNewPage: false,
+    element: "pricing",
+    path: null,
   },
   {
     id: 3,
@@ -23,8 +23,8 @@ export const dropdownItems = [
   {
     id: 4,
     title: "Contact",
-    isNewPage: true,
-    element: null,
-    path: "/contact",
+    isNewPage: false,
+    element: "form",
+    path: null,
   },
 ];

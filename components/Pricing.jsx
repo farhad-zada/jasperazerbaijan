@@ -22,6 +22,7 @@ const Pricing = ({ onHomePage }) => {
   return (
     <div
       className={`${!onHomePage ? "text-center mt-0" : "mt-40"}  text-white`}
+      id="pricing"
     >
       <HeaderTitle
         text={"Affordable Plans for Every Need"}
