@@ -159,17 +159,42 @@ export const sizesBasedCardData = [
   },
 ];
 
-import cppSVG from "@public/assets/logos/cpp.svg";
+import javaSVG from "@public/assets/logos/java.svg";
 import jsSVG from "@public/assets/logos/js.svg";
 import pythonSVG from "@public/assets/logos/python.svg";
-import javaSVG from "@public/assets/logos/java.svg";
+import solidtySVG from "@public/assets/logos/solidtySVG.svg";
+import expressSVG from "@public/assets/logos/express.svg";
+import springbootSVG from "@public/assets/logos/springBootSVG.svg";
+import phpSVG from "@public/assets/logos/phpSVG.svg";
+import laravelSVG from "@public/assets/logos/laravelSVG.svg";
+import htmlSVG from "@public/assets/logos/htmlSVG.svg";
+import cssSVG from "@public/assets/logos/cssSVG.svg";
+import dartSVG from "@public/assets/logos/dartSVG.svg";
+import flutterSVG from "@public/assets/logos/flutterSVG.svg";
+import swiftSVG from "@public/assets/logos/swiftSVG.svg";
+import nextSVG from "@public/assets/logos/nextjsSVG.svg";
+import mysqlSVG from "@public/assets/logos/mysqlSVG.svg";
+import mongodbSVG from "@public/assets/logos/mongodbSVG.svg";
+import dynamodbSVG from "@public/assets/logos/dynamoSVG.svg";
+import postgresqlSVG from "@public/assets/logos/postgresqlSVG.svg";
+import cppSVG from "@public/assets/logos/cpp.svg";
 import csharpSVG from "@public/assets/logos/cSharp.svg";
-import logo from "@/public/assets/inlineSliderLogo.png";
 import reactSVG from "@public/assets/logos/react.svg";
 import angularSVG from "@public/assets/logos/angular.svg";
 import vueSVG from "@public/assets/logos/vue.svg";
-import expressSVG from "@public/assets/logos/express.svg";
 import nuxtSVG from "@public/assets/logos/nuxt.svg";
+
+import kafkaSVG from "@public/assets/logos/kafkaSVG.svg";
+import dockerSVG from "@public/assets/logos/dockerSVG.svg";
+import kubernetesSVG from "@public/assets/logos/kubernetesSVG.svg";
+import amazonsqsSVG from "@public/assets/logos/amazonsqsSVG.svg";
+import grafanaSVG from "@public/assets/logos/grafanaSVG.svg";
+import prometheusSVG from "@public/assets/logos/prometheusSVG.svg";
+
+import googlecloudSVG from "@public/assets/logos/googlecloudSVG.svg";
+import amazonawsSVG from "@public/assets/logos/amazonawsSVG.svg";
+import azureSVG from "@public/assets/logos/azureSVG.svg";
+import firebaseSVG from "@public/assets/logos/firebaseSVG.svg";
 
 export const threeColInfiniteSliderLogosData = [
   {
@@ -180,27 +205,46 @@ export const threeColInfiniteSliderLogosData = [
       { id: 3, src: pythonSVG, alt: "pythonSVG" },
       { id: 4, src: javaSVG, alt: "javaSVG" },
       { id: 5, src: csharpSVG, alt: "csharpSVG" },
+      { id: 6, src: expressSVG, alt: "expressSVG" },
+      { id: 7, src: reactSVG, alt: "reactSVG" },
+      { id: 8, src: flutterSVG, alt: "flutterSVG" },
+      { id: 9, src: mysqlSVG, alt: "mysqlSVG" },
+      { id: 10, src: mongodbSVG, alt: "mongodbSVG" },
+      { id: 11, src: dynamodbSVG, alt: "dynamodbSVG" },
+      { id: 12, src: postgresqlSVG, alt: "postgresql" },
+      { id: 13, src: swiftSVG, alt: "swiftSVG" },
+      { id: 14, src: nextSVG, alt: "nextSVG" },
+      { id: 15, src: phpSVG, alt: "phpSVG" },
+      { id: 16, src: laravelSVG, alt: "laravelSVG" },
+      { id: 17, src: htmlSVG, alt: "htmlSVG" },
+      { id: 18, src: cssSVG, alt: "cssSVG" },
+      { id: 19, src: dartSVG, alt: "dartSVG" },
+      { id: 20, src: solidtySVG, alt: "solidtySVG" },
+      { id: 21, src: springbootSVG, alt: "springbootSVG" },
+      { id: 22, src: angularSVG, alt: "angularSVG" },
+      { id: 23, src: vueSVG, alt: "vueSVG" },
+      { id: 24, src: nuxtSVG, alt: "nuxtSVG" },
     ],
   },
   {
     // frameworks such as react, angular, vue, next.js, nuxt.js
     id: 2,
     logos: [
-      { id: 1, src: reactSVG, alt: "reactSVG" },
-      { id: 2, src: angularSVG, alt: "angularSVG" },
-      { id: 3, src: vueSVG, alt: "vueSVG" },
-      { id: 4, src: expressSVG, alt: "expressSVG" },
-      { id: 5, src: nuxtSVG, alt: "nuxtSVG" },
+      { id: 1, src: kafkaSVG, alt: "kafkaSVG" },
+      { id: 2, src: dockerSVG, alt: "dockerSVG" },
+      { id: 3, src: kubernetesSVG, alt: "kubernetesSVG" },
+      { id: 4, src: amazonsqsSVG, alt: "amazonsqsSVG" },
+      { id: 5, src: grafanaSVG, alt: "grafanaSVG" },
+      { id: 6, src: prometheusSVG, alt: "prometheusSVG" },
     ],
   },
   {
     id: 3,
     logos: [
-      { id: 1, src: logo, alt: "logo" },
-      { id: 2, src: logo, alt: "logo" },
-      { id: 3, src: logo, alt: "logo" },
-      { id: 4, src: logo, alt: "logo" },
-      { id: 5, src: logo, alt: "logo" },
+      { id: 1, src: googlecloudSVG, alt: "googlecloudSVG" },
+      { id: 2, src: amazonawsSVG, alt: "amazonawsSVG" },
+      { id: 3, src: azureSVG, alt: "azureSVG" },
+      { id: 4, src: firebaseSVG, alt: "firebaseSVG" },
     ],
   },
 ];
