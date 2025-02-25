@@ -4,6 +4,8 @@ import { dropdownItems } from "@datas/dropdownItems";
 import Link from "@node_modules/next/link";
 import { handleGoSomewhere } from "@utils/handleGoSomewhere";
 import React from "react";
+import jasperLogo from "../public/assets/jasper normal logo.png";
+import Image from "@node_modules/next/image";
 
 const Footer = () => {
   return (
@@ -11,7 +13,12 @@ const Footer = () => {
       <div className="w-11/12 mx-auto pt-20">
         <div className="flex flex-col md:flex-row justify-between ">
           <Link href={"/"}>
-            <h2 className="text-3xl md:text-5xl">Jasper Azerbaijan</h2>
+            {/* <h2 className="text-3xl md:text-5xl">Jasper Azerbaijan</h2> */}
+            <Image
+              src={jasperLogo}
+              className="w-40"
+              alt="Jasper Azerbaijan Logo"
+            />
           </Link>
           <ul className="flex gap-5 mt-10 md:mt-0 md:gap-3 flex-col md:flex-row">
             {dropdownItems.map((item) => (

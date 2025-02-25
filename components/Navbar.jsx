@@ -8,6 +8,8 @@ import Link from "@node_modules/next/link";
 import useOutsideClick from "@utils/hooks/useOutsideClick";
 import { handleGoSomewhere } from "@utils/handleGoSomewhere";
 import { dropdownItems } from "@datas/dropdownItems";
+import jasperLogo from "../public/assets/jasper normal logo.png";
+import Image from "@node_modules/next/image";
 
 const staggeredList = {
   hidden: { opacity: 0 },
@@ -37,7 +39,11 @@ const Navbar = () => {
       <nav className="w-11/12 flex justify-between items-center">
         {/* Logo */}
         <Link href={"/"}>
-          <h2 className="text-white text-xl font-semibold">JasperAzerbaijan</h2>
+          <Image
+            src={jasperLogo}
+            className="w-40"
+            alt="Jasper Azerbaijan Logo"
+          />
         </Link>
 
         <div className="relative">

@@ -123,7 +123,13 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
         </div>
       )}
       <div className="md:hidden items-center justify-between w-full flex flex-col">
-        <Image src={photo} width={400} height={600} alt={`${headText} photo`} />
+        <Image
+          className="rounded-2xl mb-10"
+          src={photo}
+          width={400}
+          height={600}
+          alt={`${headText} photo`}
+        />
         <div className="flex flex-col text-center">
           <h3 className="header_text font-semibold leading-[72px]">
             {headText}
@@ -417,7 +423,7 @@ export default function Home() {
           <ContactUs />
         </div>
 
-        <div className="bg-black w-full h-40"></div>
+        {/* <div className="bg-black w-full h-40"></div> */}
       </div>
     </div>
   );
