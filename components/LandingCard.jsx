@@ -6,7 +6,7 @@ import SubheaderTitle from "./SubheaderTitle";
 
 const LandingCard = () => {
   return (
-    <section className="w-full bg-darkGray rounded-[40px] relative flex flex-col md:flex-row items-center  md:h-[80vh] overflow-hidden p-6 md:p-12">
+    <section className="w-full bg-darkGray rounded-[40px] relative flex flex-col md:flex-row items-center  md:h-[80vh] overflow-hidden p-6 md:p-12 mt-2 md:mt-0">
       {/* Left Side - Text Content */}
       <div className="w-full text-center md:text-left space-y-5 text-white">
         <HeaderTitle

@@ -52,11 +52,11 @@ const fadeInScale = {
 
 function Card({ headText, descText, logo }) {
   return (
-    <div className="w-full bg-darkGray min-h-56 h-full flex flex-col p-4 rounded-2xl pb-8">
+    <div className="w-full bg-darkGray min-h-56 h-full flex flex-col p-6  rounded-2xl pb-8">
       <div className="size-16 bg-purple rounded-full flex justify-center items-center">
         {logo}
       </div>
-      <div className="mt-14">
+      <div className="mt-10">
         <h3 className="text-2xl 2xl:text-3xl font-bold pb-4">{headText}</h3>
         <ul className=" list-disc pl-10">
           {descText.slice(0, 6).map((text, index) => (
@@ -89,8 +89,10 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             alt={`${headText} photo`}
           />
           <div className="flex flex-col w-1/2">
-            <HeaderTitle text={headText} highlight={[]} />
-            <SubheaderTitle text={descText} className={"w-1/2 py-5"} />
+            <div className="">
+              <HeaderTitle text={headText} highlight={[]} />
+              <SubheaderTitle text={descText} className={"w-1/2 py-5"} />
+            </div>
             {/* <p className="py-3 w-1/2 subheader_text">{descText}</p> */}
             <div className="w-40">
               <GetStartedButton
@@ -165,7 +167,7 @@ function SizesBasedCard({ headText, descText, logo, size }) {
         <p className="text-gray-300 w-5/6 text-lg md:text-lg 2xl:text-2xl">
           {descText}
         </p>
-        <div className="size-16 bg-purple rounded-full flex justify-center items-center">
+        <div className="size-12 md:size-16 bg-purple rounded-full flex justify-center items-center">
           {logo}
         </div>
       </div>
@@ -237,7 +239,7 @@ export default function Home() {
         className={`w-11/12 mx-auto text-white ${outfitFontNormal.className}`}
       >
         <LandingCard />
-        <Slider />
+        {/* <Slider /> */}
         <section className="pt-40">
           <HeaderTitle
             text="Unleash Your Potential"
@@ -253,7 +255,7 @@ export default function Home() {
             text={
               "At Jasper Azerbaijan, we don’t just build technology—we revolutionize the way businesses embrace the digital world. From AI-driven platforms and e-commerce solutions to secure blockchain contracts and custom backend architectures, our expert team is here to help you break boundaries and stand out in today’s fast-paced market."
             }
-            className={"w-3/4 md:w-4/6 pt-5 md:pt-2 pl-2"}
+            className={"w-3/4 md:w-4/6 pt-5 md:pt-2 pl-2 "}
           />
           {/* <motion.p
             className="w-3/4 md:w-4/6 subheader_text pt-10"
@@ -371,7 +373,7 @@ export default function Home() {
               We have very talented and well motivated team
             </p> */}
 
-            <div className="flex gap-2 mt-10 mx-auto md:mx-0 md:mt-0">
+            <div className="flex gap-5 md:gap-2 mt-10 mx-auto md:mx-0 md:mt-0">
               <button
                 className="size-10 bg-purple rounded-full flex justify-center items-center p-2"
                 onClick={slideLeft}

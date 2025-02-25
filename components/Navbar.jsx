@@ -41,7 +41,7 @@ const Navbar = () => {
         <Link href={"/"}>
           <Image
             src={jasperLogo}
-            className="w-40"
+            className="w-28 md:w-40"
             alt="Jasper Azerbaijan Logo"
           />
         </Link>

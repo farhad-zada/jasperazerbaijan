@@ -11,18 +11,19 @@ const Footer = () => {
   return (
     <footer className="bg-darkGray w-screen min-h-[300px] h-full text-white">
       <div className="w-11/12 mx-auto pt-20">
-        <div className="flex flex-col md:flex-row justify-between ">
+        <div className="flex flex-col md:flex-row justify-between md:items-center ">
           <Link href={"/"}>
             {/* <h2 className="text-3xl md:text-5xl">Jasper Azerbaijan</h2> */}
             <Image
               src={jasperLogo}
-              className="w-40"
+              className="w-28 md:w-40"
               alt="Jasper Azerbaijan Logo"
             />
           </Link>
-          <ul className="flex gap-5 mt-10 md:mt-0 md:gap-3 flex-col md:flex-row">
+          <ul className="flex gap-5 mt-10 md:mt-0 md:gap-3 justify-center md:justify-normal flex-row">
             {dropdownItems.map((item) => (
               <li
+                key={item.id}
                 className="hover:underline transition-all duration-300 hover:cursor-pointer"
                 onClick={() => {
                   if (item.isNewPage) {
@@ -31,7 +32,6 @@ const Footer = () => {
                     handleGoSomewhere(item.element);
                   }
                 }}
-                key={item.id}
               >
                 {item.title}
               </li>
