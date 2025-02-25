@@ -5,8 +5,8 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 import { useState, useCallback } from "react";
 
-import Slider from "@components/Slider";
 import Image from "@node_modules/next/image";
+import { useEffect } from "react";
 
 import Pricing from "@components/Pricing";
 import { motion, AnimatePresence } from "framer-motion";
@@ -178,34 +178,112 @@ function SizesBasedCard({ headText, descText, logo, size }) {
   );
 }
 
-function InlineSlider({ logos, reversed = false }) {
+// function InlineSlider({ logos, reversed = false }) {
+//   const isMobile = useBreakpoint();
+
+//   return (
+//     <div className="overflow-hidden h-full md:w-full mx-0 md:mx-auto py-6 z-[1] flex flex-col md:flex-row items-center relative">
+//       <motion.div
+//         className={`flex ${
+//           isMobile ? "flex-row" : "flex-col"
+//         } justify-end md:space-y-16`}
+//         initial={{
+//           x: isMobile ? (reversed ? "-20%" : "20%") : "0%",
+//           y: isMobile ? (reversed ? "0%" : "20%") : "0%",
+//         }}
+//         animate={{
+//           x: isMobile ? (reversed ? "20%" : "-20%") : "0%",
+//           y: isMobile ? (reversed ? "0%" : "0%") : "0%",
+//         }}
+//         transition={{
+//           repeat: Infinity,
+//           duration: 20,
+//           ease: "linear",
+//         }}
+//       >
+//         {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+//           <div key={index} className="relative h-24 w-40">
+//             <Image
+//               src={logo.src}
+//               alt={logo.alt}
+//               layout="fill"
+//               objectFit="contain"
+//               priority
+//             />
+//           </div>
+//         ))}
+//       </motion.div>
+//     </div>
+//   );
+// }
+
+const LogoSlider = ({ logos, isMobile, isReversed = false }) => {
+  const duplicatedLogos = [...logos, ...logos];
   return (
-    <div className="overflow-hidden h-full w-full mx-auto py-6 z-[1]  flex items-center relative">
+    <div
+      className={`flex overflow-hidden relative ${
+        !isMobile ? "flex-col h-[500px]" : "h-28 items-center"
+      }`}
+    >
       <motion.div
-        className="flex flex-col space-y-16"
-        initial={{ y: reversed ? "-20%" : "20%" }}
-        animate={{ y: reversed ? "20%" : "-20%" }}
+        className={`flex ${!isMobile ? "flex-col" : ""} gap-16`}
+        animate={{
+          [!isMobile ? "y" : "x"]: isReversed ? ["0%", "-50%"] : ["-50%", "0%"],
+        }}
         transition={{
-          repeat: Infinity,
           duration: 20,
+          repeat: Number.POSITIVE_INFINITY,
           ease: "linear",
         }}
       >
-        {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
-          <div key={index} className="relative h-24 w-80">
+        {duplicatedLogos.map((logo, index) => (
+          <div
+            key={index}
+            className={`flex ${!isMobile ? "justify-center" : ""}`}
+          >
             <Image
-              src={logo.src}
-              alt={logo.alt}
-              layout="fill"
-              objectFit="contain"
-              priority
+              src={logo.src || "/placeholder.svg"}
+              alt={`Logo ${index + 1}`}
+              width={112}
+              height={112}
+              className="w-28 h-28 object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
         ))}
       </motion.div>
     </div>
   );
-}
+};
+
+const MobileLogoSlider = ({ logos, isReversed }) => {
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
+  return (
+    <div className="w-[900px] flex overflow-hidden relative h-full justify-center items-center">
+      <motion.div
+        className="flex gap-10"
+        animate={{
+          x: isReversed ? ["0%", "-50%"] : ["-50%", "0%"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "linear",
+          repeatType: "reverse",
+        }}
+      >
+        {duplicatedLogos.map((logo, index) => (
+          <div key={index} className="flex justify-center w-16">
+            <Image
+              src={logo.src || "/placeholder.svg"}
+              alt={`Logo ${index + 1}`}
+              className="w-28 h-28 object-contain opacity-80 hover:opacity-100 transition-opacity"
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
 export default function Home() {
   const isMobile = useBreakpoint();
@@ -333,7 +411,7 @@ export default function Home() {
         <Pricing onHomePage={true} />
 
         <section className="pt-40">
-          <div className="w-full h-[600px] bg-darkGray rounded-3xl flex flex-col md:flex-row justify-between items-center pt-10">
+          <div className="w-full h-full md:h-[600px] bg-darkGray rounded-3xl flex flex-col md:flex-row justify-between items-center pt-10">
             <div className=" w-11/12 md:w-1/2 pl-10">
               <HeaderTitle
                 text={"Flexible to Choose the Platform"}
@@ -347,7 +425,27 @@ export default function Home() {
               />
             </div>
 
-            <div className="h-full overflow-hidden hidden md:flex w-full">
+            <div className="overflow-hidden w-full flex flex-col md:flex-row h-full mx-auto p-4 justify-evenly">
+              {threeColInfiniteSliderLogosData.map((group, index) => (
+                <div key={index}>
+                  <div className="hidden md:block">
+                    <LogoSlider logos={group.logos} isReversed={index % 2} />
+                  </div>
+                  <div className=" block md:hidden">
+                    <MobileLogoSlider
+                      logos={group.logos}
+                      isReversed={index % 2}
+                    />
+                  </div>
+
+                  {/* Mobile horizontal slider */}
+                  {/* <div className="block md:hidden">
+                    <LogoSlider logos={group.logos} isMobile={true} />
+                  </div> */}
+                </div>
+              ))}
+            </div>
+            {/* <div className="h-full overflow-hidden flex flex-col md:flex-row w-full">
               {threeColInfiniteSliderLogosData.map((group, index) => (
                 <InlineSlider
                   key={index}
@@ -355,7 +453,7 @@ export default function Home() {
                   reversed={index % 2 === 0}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
 
