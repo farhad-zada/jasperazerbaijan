@@ -12,6 +12,12 @@ const formCategories = [
   { id: 3, inner: "Web Solutions" },
 ];
 
+// test
+const apiUrl = "http://localhost:8181/api/v1/apply";
+
+// Real api
+("https://api.jasperazerbaijan.com/api/v1/apply");
+
 const ContactUs = () => {
   const {
     register,
@@ -26,6 +32,7 @@ const ContactUs = () => {
     setLoading(true);
     setSuccess(false);
 
+    // Simulate a delay before making the request
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log("Form Submitted:", data);
@@ -33,11 +40,50 @@ const ContactUs = () => {
       "Selected Categories:",
       selected.map((index) => formCategories[index - 1].inner)
     );
-    setLoading(false);
-    setSuccess(true);
-    reset();
 
-    setTimeout(() => setSuccess(false), 2000);
+    // Determine the API endpoint based on the environment
+    const apiUrl =
+      window.location.hostname === "localhost"
+        ? "http://localhost:8181/api/v1/apply"
+        : "https://api.jasperazerbaijan.com/api/v1/apply";
+
+    // Prepare the data to send
+    const requestData = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+      tgHandle: data.telegramAdress || "", // If no Telegram handle is provided, send an empty string
+      tags: selected.map((index) => formCategories[index - 1].inner), // Extracting selected categories
+    };
+
+    // Send the POST request to the API
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit data");
+      } else {
+        console.log("Data submitted successfully");
+      }
+
+      // On success, handle success state and reset form
+      setLoading(false);
+      setSuccess(true);
+      reset();
+
+      setTimeout(() => setSuccess(false), 2000);
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      setLoading(false);
+      setSuccess(false);
+    }
   };
 
   const [selected, setSelected] = useState([]);
@@ -95,7 +141,7 @@ const ContactUs = () => {
                 },
               })}
               className="w-full px-4 py-2 bg-[#BBBBBB]/15 rounded-lg placeholder:text-[#D9D9D9] border border-gray-700 focus:border-purple focus:ring-1 focus:ring-purple outline-none transition-all duration-200"
-              placeholder="+1 (123) 456-7980"
+              placeholder="+994 070 777-77-"
             />
             {errors.phone && (
               <p className="text-red-500 text-sm py-1 mt-2 pl-2">
