@@ -6,7 +6,6 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState, useCallback } from "react";
 
 import Image from "@node_modules/next/image";
-import { useEffect } from "react";
 
 import Pricing from "@components/Pricing";
 import { motion, AnimatePresence } from "framer-motion";
@@ -274,6 +273,8 @@ const MobileLogoSlider = ({ logos, isReversed }) => {
         {duplicatedLogos.map((logo, index) => (
           <div key={index} className="flex justify-center w-16">
             <Image
+              width={"auto"}
+              height={"auto"}
               src={logo.src || "/placeholder.svg"}
               alt={`Logo ${index + 1}`}
               className="w-28 h-28 object-contain opacity-80 hover:opacity-100 transition-opacity"

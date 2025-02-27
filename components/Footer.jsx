@@ -15,6 +15,8 @@ const Footer = () => {
           <Link href={"/"}>
             {/* <h2 className="text-3xl md:text-5xl">Jasper Azerbaijan</h2> */}
             <Image
+              width={"auto"}
+              height={"auto"}
               src={jasperLogo}
               className="w-28 md:w-40"
               alt="Jasper Azerbaijan Logo"

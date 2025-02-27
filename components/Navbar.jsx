@@ -40,6 +40,8 @@ const Navbar = () => {
         {/* Logo */}
         <Link href={"/"}>
           <Image
+            width={"auto"}
+            height={"auto"}
             src={jasperLogo}
             className="w-28 md:w-40"
             alt="Jasper Azerbaijan Logo"
@@ -93,8 +95,10 @@ const Navbar = () => {
                   variants={listItem}
                   onClick={() => {
                     if (item.isNewPage) {
+                      setIsMenuOpen(false);
                       window.location.href = item.path;
                     } else {
+                      setIsMenuOpen(false);
                       handleGoSomewhere(item.element);
                     }
                   }}
