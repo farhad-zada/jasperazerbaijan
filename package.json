@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.2.15",
     "@reduxjs/toolkit": "^2.5.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "framer-motion": "^12.4.2",
