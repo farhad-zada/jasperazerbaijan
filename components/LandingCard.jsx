@@ -10,7 +10,7 @@ const LandingCard = () => {
       {/* Left Side - Text Content */}
       <div className="w-full text-center md:text-left space-y-5 text-white">
         <HeaderTitle
-          text={"Incredible Speed, Terrible Profit!"}
+          text={"Incredible Speed, Awesome Profit!"}
           highlight={["Profit!"]}
           br={"Ultimate"}
         />
