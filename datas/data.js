@@ -60,7 +60,7 @@ export const featuresData = [
   {
     id: 1,
     headText: "Innovative Approach",
-    descText: `Using edge-cutting technologies, Digital transformation experience, AI integration into bussinesses, IoT solutions, Big Data analysis`,
+    descText: `Picking best fits for your needs and putting most valuable parts of innovations : AI, Blockchain. We put you ahead of your competitors.`,
     photo: featureBlockImage1,
     reversed: false,
   },
