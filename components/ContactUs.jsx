@@ -142,7 +142,7 @@ const ContactUs = () => {
                 },
               })}
               className="w-full px-4 py-2 bg-[#BBBBBB]/15 rounded-lg placeholder:text-[#D9D9D9] border border-gray-700 focus:border-purple focus:ring-1 focus:ring-purple outline-none transition-all duration-200"
-              placeholder="+994 070 777-77-"
+              placeholder="+994 070 777-77-77"
             />
             {errors.phone && (
               <p className="text-red-500 text-sm py-1 mt-2 pl-2">

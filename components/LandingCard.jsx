@@ -15,7 +15,7 @@ const LandingCard = () => {
           br={"Ultimate"}
         />
         <SubheaderTitle
-          text={`AI, Blockchain, Web, and Mobile – it will skyrocket your profits!`}
+          text={`AI, Blockchain, Web, and Mobile – it will increase your profits!`}
           className={"w-full md:w-full py-0 md:py-5"}
         />
       </div>

@@ -321,8 +321,8 @@ export default function Home() {
         {/* <Slider /> */}
         <section className="pt-40">
           <HeaderTitle
-            text="Unleash Your Potential"
-            highlight="Potential"
+            text="Realize your vision"
+            highlight="Realize"
             animation={{
               initial: { opacity: 0, y: -20 },
               whileInView: { opacity: 1, y: 0 },

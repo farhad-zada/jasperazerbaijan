@@ -73,7 +73,7 @@ export const featuresData = [
   },
   {
     id: 3,
-    headText: "Continues Support",
+    headText: "Continuous Support",
     descText: `24/7 technical support, Regular updates, Performance monitoring, Security updates, Backup və restore services`,
     photo: featureBlockImage3,
     reversed: false,
@@ -128,7 +128,7 @@ import { FaPaperPlane, FaSearch, FaCogs, FaBolt } from "react-icons/fa";
 export const sizesBasedCardData = [
   {
     headText: "Write to us",
-    descText: "Get a response and a free consultation within 24 hours.",
+    descText: "Get a response and a free consultation within minutes",
     logo: <FaPaperPlane size={32} />,
     size: 1,
   },
