@@ -332,7 +332,7 @@ export default function Home() {
 
           <SubheaderTitle
             text={
-              "At Jasper Azerbaijan, we don’t just build technology—we revolutionize the way businesses embrace the digital world. From AI-driven platforms and e-commerce solutions to secure blockchain contracts and custom backend architectures, our expert team is here to help you break boundaries and stand out in today’s fast-paced market."
+              "Discover the true potential of your business with our solutions. Capture the market with speed, quality, and incredible results, and double your profits!"
             }
             className={"w-3/4 md:w-4/6 pt-5 md:pt-2 pl-2 "}
           />
@@ -386,10 +386,7 @@ export default function Home() {
             highlight={["Reality"]}
           />
           <SubheaderTitle
-            text={`Empower your vision with AI-driven precision. Our technology
-            optimizes workflows, enhances automation, and brings intelligent
-            solutions to complex challenges—turning bold ideas into real-world
-            impact.`}
+            text={`Turn your vision into reality! Transform your business processes with our AI solutions, save time, and rapidly increase your profits. Forget about technical challenges and celebrate your successes!`}
             className={"w-full md:w-1/2 py-5"}
           />
 

@@ -10,6 +10,8 @@ const formCategories = [
   { id: 1, inner: "Mobile App Development" },
   { id: 2, inner: "Blockchain Solutions" },
   { id: 3, inner: "Web Solutions" },
+  { id: 4, inner: "Hosting Solutions" },
+  { id: 5, inner: "AI solution" },
 ];
 
 // test
@@ -97,7 +99,7 @@ const ContactUs = () => {
   };
   return (
     <div className="w-full bg-black text-white">
-      <div className=" text-center">
+      <div className=" text-center" id="form">
         <HeaderTitle text={"Contact Us"} highlight={["Us"]} />
 
         <p className=" w-full lg:w-2/5 mx-auto mt-4">
@@ -107,7 +109,6 @@ const ContactUs = () => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          id="form"
           className="mt-8 space-y-4 p-6 rounded-2xl w-full lg:w-6/12 mx-auto bg-darkGray shadow-lg"
         >
           <div className="text-left">

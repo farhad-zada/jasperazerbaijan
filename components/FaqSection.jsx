@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import faqArrow from "@public/assets/faqArrowIcon.svg";
 import HeaderTitle from "./HeaderTitle";
-import SubheaderTitle from "./SubheaderTitle";
 
 const fakeFaqData = [
   {
@@ -66,7 +63,7 @@ function FAQItem({ question, answer, isOpen, onClick }) {
       initial={{ opacity: 0, y: -10 }}
       exit={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <button
         className="w-full text-left py-4 text-lg font-medium text-white flex justify-between items-center"
@@ -74,20 +71,21 @@ function FAQItem({ question, answer, isOpen, onClick }) {
       >
         {question}
         <span
-          className={`${
-            isOpen ? "rotate-0 text-purple" : "rotate-180"
-          } transition-all transform duration-300 ease-linear text-2xl`}
+          className={`transition-all duration-300 ease-in-out transform text-2xl ${
+            isOpen ? "rotate-180 text-purple" : "rotate-0 text-gray-300"
+          }`}
         >
           ^
         </span>
       </button>
+
       {isOpen && (
         <motion.p
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="text-gray-400 pb-4"
+          initial={{ opacity: 0, maxHeight: 0 }}
+          animate={{ opacity: 1, maxHeight: 500 }}
+          exit={{ opacity: 0, maxHeight: 0 }}
+          transition={{ duration: 1, ease: "easeIn" }}
+          className="text-gray-400 pb-4 overflow-hidden"
         >
           {answer}
         </motion.p>

@@ -2,9 +2,10 @@ export const handleGoSomewhere = (path) => {
   const element = document.getElementById(path);
 
   if (element) {
-    const elementBottomPosition = element.offsetTop + element.offsetHeight;
+    const elementTopPosition =
+      window.pageYOffset + element.getBoundingClientRect().top;
     window.scrollTo({
-      top: elementBottomPosition - window.innerHeight,
+      top: elementTopPosition,
       behavior: "smooth",
     });
   }

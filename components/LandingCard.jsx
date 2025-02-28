@@ -10,13 +10,12 @@ const LandingCard = () => {
       {/* Left Side - Text Content */}
       <div className="w-full text-center md:text-left space-y-5 text-white">
         <HeaderTitle
-          text={"Your Ultimate Tech Partner"}
-          highlight={["Tech"]}
+          text={"Incredible Speed, Terrible Profit!"}
+          highlight={["Profit!"]}
           br={"Ultimate"}
         />
         <SubheaderTitle
-          text={`Unlock your creative potential. Seamlessly generate, customize, and
-          perfect your projects with cutting-edge AI and blockchain solutions.`}
+          text={`AI, Blockchain, Web, and Mobile – it will skyrocket your profits!`}
           className={"w-full md:w-full py-0 md:py-5"}
         />
       </div>

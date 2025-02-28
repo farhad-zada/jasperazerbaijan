@@ -51,10 +51,10 @@ export const servicesCardData = [
   },
 ];
 
-import featureBlockImage1 from "@public/assets/featureBlockImage1.jpeg";
-import featureBlockImage2 from "@public/assets/featureBlockImage2.jpeg";
-import featureBlockImage3 from "@public/assets/featureBlockImage3.jpeg";
-import featureBlockImage4 from "@public/assets/featureBlockImage4.jpeg";
+import featureBlockImage1 from "@public/assets/featureBlockImage1.png";
+import featureBlockImage2 from "@public/assets/featureBlockImage2.png";
+import featureBlockImage3 from "@public/assets/featureBlockImage3.png";
+import featureBlockImage4 from "@public/assets/featureBlockImage4.png";
 
 export const featuresData = [
   {
@@ -80,8 +80,8 @@ export const featuresData = [
   },
   {
     id: 3,
-    headText: "Hosting Service",
-    descText: `Reliable & Safe, High performance servers, 99.9% update guaranty, SSL certificates, Backup service, DDoS protection (4TB), 24/7 support`,
+    headText: "Legendary Hosting",
+    descText: `Your business will run like lightning on our rocket-fast servers! With a 99.9% uptime guarantee, your business will never stop! Our technical support is available around the clock – issues are resolved before they even arise! With our automatic backup and encryption technology, your data is protected like Fort Knox!`,
     photo: featureBlockImage4,
     reversed: true,
   },
@@ -123,38 +123,33 @@ export const teamMembersData = [
   },
 ];
 
-import { MdInsights } from "react-icons/md";
-import { FaRocket } from "react-icons/fa";
-import { AiFillThunderbolt } from "react-icons/ai";
-import { TbTargetArrow } from "react-icons/tb";
+import { FaPaperPlane, FaSearch, FaCogs, FaBolt } from "react-icons/fa";
 
 export const sizesBasedCardData = [
   {
-    headText: "Empower Your Decisions",
-    descText:
-      "Leverage AI-driven insights and automation to optimize your operations. Transform data into actionable strategies with cutting-edge technology.",
-    logo: <MdInsights size={32} />,
+    headText: "Write to us",
+    descText: "Get a response and a free consultation within 24 hours.",
+    logo: <FaPaperPlane size={32} />,
     size: 1,
   },
   {
-    headText: "Redefine What's Possible",
-    descText:
-      "Harness AI and automation to streamline complex tasks, optimize workflows, and unlock new opportunities for growth.",
-    logo: <FaRocket size={32} />,
+    headText: "Technology audit ",
+    descText: "Our professional team will accurately identify your needs.",
+    logo: <FaSearch size={32} />,
     size: 2,
   },
   {
-    headText: "Efficiency Meets Innovation",
+    headText: "Custom solution plan",
     descText:
-      "Seamlessly integrate AI-powered solutions that enhance performance, automate processes, and drive smarter decision-making.",
-    logo: <AiFillThunderbolt size={32} />,
+      "AI, Blockchain, Web, and Mobile technologies tailored specifically for your business.",
+    logo: <FaCogs size={32} />,
     size: 2,
   },
   {
-    headText: "Unmatched Accuracy",
+    headText: "Fast implementation",
     descText:
-      "Harness AI-driven precision for optimal performance. Our technology refines every process, ensuring efficiency and reliability in every task.",
-    logo: <TbTargetArrow size={32} />,
+      "See the first results within 2 weeks and leave your competitors behind.",
+    logo: <FaBolt size={32} />,
     size: 1,
   },
 ];
