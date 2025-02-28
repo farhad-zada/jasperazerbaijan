@@ -87,10 +87,10 @@ function FeaturesBlock({ headText, descText, photo, reversed = false }) {
             height={600}
             alt={`${headText} photo`}
           />
-          <div className="flex flex-col w-1/2">
+          <div className="flex flex-col w-1/2 pl-5">
             <div className="">
               <HeaderTitle text={headText} highlight={[]} />
-              <SubheaderTitle text={descText} className={"w-1/2 py-5"} />
+              <SubheaderTitle text={descText} className={"w-3/4 py-5"} />
             </div>
             {/* <p className="py-3 w-1/2 subheader_text">{descText}</p> */}
             <div className="w-40">
@@ -336,19 +336,6 @@ export default function Home() {
             }
             className={"w-3/4 md:w-4/6 pt-5 md:pt-2 pl-2 "}
           />
-          {/* <motion.p
-            className="w-3/4 md:w-4/6 subheader_text pt-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            At Jasper Azerbaijan, we don’t just build technology—we
-            revolutionize the way businesses embrace the digital world. From
-            AI-driven platforms and e-commerce solutions to secure blockchain
-            contracts and custom backend architectures, our expert team is here
-            to help you break boundaries and stand out in today’s fast-paced
-            market.
-          </motion.p> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
             {servicesCardData.map((card, index) => (

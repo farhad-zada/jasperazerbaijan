@@ -11,7 +11,7 @@ const SubheaderTitle = ({
   const isMobile = useBreakpoint();
   return (
     <motion.h3
-      className={` subheader_text  ${className}`}
+      className={` subheader_text  opacity-75 ${className}`}
       initial={animation.initial}
       whileInView={animation.whileInView}
       transition={animation.transition}
@@ -23,7 +23,7 @@ const SubheaderTitle = ({
         return (
           <span
             key={index}
-            className={isHighlighted ? "text-purple" : "text-white"}
+            className={`${isHighlighted ? "text-purple" : "text-white"}`}
           >
             {word} {!isMobile && isBreak ? <br /> : null}{" "}
           </span>

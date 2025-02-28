@@ -25,7 +25,7 @@
 
 .subheader_text
 {
-  font-size: clamp(1rem, 1.5vw, 5rem);  
+  font-size: clamp(1rem, 1.3vw, 5rem);  
 }
 
 .pricing_list_item
