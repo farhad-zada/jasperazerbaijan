@@ -2,8 +2,11 @@
 const nextConfig = {
   output: "export",
   images: {
-    domains: ["jasperazerbaijan.com"],
+    unoptimized: true,
   },
+  // images: {
+  //   domains: ["jasperazerbaijan.com"],
+  // },
 };
 
 export default nextConfig;

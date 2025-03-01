@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import photo from "/public/assets/landingAsset.png";
+import photo from "@/public/assets/landingAsset.png";
 import HeaderTitle from "./HeaderTitle";
 import SubheaderTitle from "./SubheaderTitle";
 
