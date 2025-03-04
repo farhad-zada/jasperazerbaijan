@@ -6,6 +6,15 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { CheckCircle, Loader2 } from "lucide-react";
+
+const formCategories = [
+  { id: 1, inner: "Mobile App Development" },
+  { id: 2, inner: "Blockchain Solutions" },
+  { id: 3, inner: "Web Solutions" },
+  { id: 4, inner: "Hosting Solutions" },
+  { id: 5, inner: "AI solution" },
+];
+
 const ShowModalLogic = () => {
   const { init, showModal, setShowModalFalse } = useStore();
 
@@ -32,16 +41,17 @@ const ContactUsModal = ({ closeModal }) => {
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50 w-11/12 mx-auto lg:w-full"
     >
       <div className="bg-darkGray p-6 rounded-lg shadow-lg w-full max-w-lg relative">
-        <button
-          onClick={closeModal}
-          className="md:hidden absolute top-5.5 right-4  size-9 bg-purple rounded-full"
-        >
-          ✕
-        </button>
-
-        <h2 className="text-3xl text-center font-bold mb-4 text-purple">
-          Contact Us
-        </h2>
+        <div className="relative flex items-center justify-center w-full">
+          <h2 className="text-3xl text-center font-bold mb-4 text-purple">
+            Contact Us
+          </h2>
+          <button
+            onClick={closeModal}
+            className="absolute right-0 top-0 w-8 h-8 bg-purple rounded-full flex items-center justify-center text-white hover:bg-purple-700 transition-colors"
+          >
+            ✕
+          </button>
+        </div>
         <ContactForm />
       </div>
     </div>
@@ -57,19 +67,71 @@ const ContactForm = () => {
   } = useForm();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-
+  const [selected, setSelected] = useState([]);
+  const handleSelect = (index) => {
+    setSelected((prev) => {
+      if (prev.includes(index)) {
+        return prev.filter((item) => item !== index);
+      }
+      return [...prev, index];
+    });
+  };
   const onSubmit = async (data) => {
     setLoading(true);
     setSuccess(false);
 
+    // Simulate a delay before making the request
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log("Form Submitted:", data);
-    setLoading(false);
-    setSuccess(true);
-    reset();
+    console.log(
+      "Selected Categories:",
+      selected.map((index) => formCategories[index - 1].inner)
+    );
 
-    setTimeout(() => setSuccess(false), 2000);
+    // Determine the API endpoint based on the environment
+    const apiUrl =
+      window.location.hostname === "localhost"
+        ? "http://localhost:8181/api/v1/apply"
+        : "https://api.jasperazerbaijan.com/api/v1/apply";
+
+    // Prepare the data to send
+    const requestData = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+      tgHandle: data.telegramAdress || "", // If no Telegram handle is provided, send an empty string
+      tags: selected.map((index) => formCategories[index - 1].inner), // Extracting selected categories
+    };
+
+    // Send the POST request to the API
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit data");
+      } else {
+        console.log("Data submitted successfully");
+      }
+
+      // On success, handle success state and reset form
+      setLoading(false);
+      setSuccess(true);
+      reset();
+
+      setTimeout(() => setSuccess(false), 2000);
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      setLoading(false);
+      setSuccess(false);
+    }
   };
   return (
     <form
@@ -106,7 +168,7 @@ const ContactForm = () => {
             },
           })}
           className="w-full px-4 py-2 bg-[#BBBBBB]/15 rounded-lg placeholder:text-[#D9D9D9] border border-gray-700 focus:border-purple focus:ring-1 focus:ring-purple outline-none transition-all duration-200"
-          placeholder="+1 (123) 456-7980"
+          placeholder="+994 070 777-77-77"
         />
         {errors.phone && (
           <p className="text-red-500 text-sm py-1 mt-1 pl-2">
@@ -158,6 +220,18 @@ const ContactForm = () => {
           animate={errors.message ? { x: [-50, 50, -50, 50, 0] } : {}}
         ></motion.textarea>
       </div>
+      {formCategories.map((data) => (
+        <button
+          key={data.id}
+          type="button"
+          onClick={() => handleSelect(data.id)}
+          className={`${
+            selected.includes(data.id) ? "bg-purple text-white" : "bg-darkGray"
+          } rounded-lg px-3 py-1 border transition-all delay-200 h-full cursor-pointer`}
+        >
+          {data.inner}
+        </button>
+      ))}
       <motion.button
         type="submit"
         disabled={loading}
