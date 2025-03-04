@@ -89,6 +89,7 @@ const PricingCard = ({
           {features.map((feature, index) => (
             <div key={index} className="py-2 flex gap-2 items-center">
               <Image
+                loading="lazy"
                 src={"/assets/PricingIcon.svg"}
                 width={16}
                 height={16}

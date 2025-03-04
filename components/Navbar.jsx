@@ -40,6 +40,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href={"/"}>
           <Image
+            loading="lazy"
             width={"auto"}
             height={"auto"}
             src={jasperLogo}

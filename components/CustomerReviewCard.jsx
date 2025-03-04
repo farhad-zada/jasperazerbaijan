@@ -12,6 +12,7 @@ const CustomerReviewCard = ({ image, name, comment }) => {
     >
       <div className="flex items-center gap-4">
         <Image
+          loading="lazy"
           src={image}
           width={48}
           height={48}

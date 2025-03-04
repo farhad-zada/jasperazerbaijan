@@ -23,6 +23,7 @@ const LandingCard = () => {
       {/* Right Side - Image */}
       <div className="w-full  flex justify-end mt-8 md:mt-0">
         <Image
+          loading="lazy"
           src={photo}
           width={500}
           height={500}

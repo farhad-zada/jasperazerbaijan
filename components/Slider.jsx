@@ -29,6 +29,7 @@ const InfiniteSlider = () => {
         {[...logos, ...logos].map((logo, index) => (
           <div key={index} className="relative h-16 w-80 flex-shrink-0">
             <Image
+              loading="lazy"
               width={"auto"}
               height={"auto"}
               src={logo.src}
