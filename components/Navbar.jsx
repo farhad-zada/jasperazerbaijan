@@ -8,8 +8,11 @@ import Link from "@node_modules/next/link";
 import useOutsideClick from "@utils/hooks/useOutsideClick";
 import { handleGoSomewhere } from "@utils/handleGoSomewhere";
 import { dropdownItems } from "@datas/dropdownItems";
-import jasperLogo from "../public/assets/jasper normal logo.png";
+import jasperLogoNew from "../public/assets/jasperLogoNew.png";
 import Image from "@node_modules/next/image";
+import { Outfit } from "next/font/google";
+
+const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
 const staggeredList = {
   hidden: { opacity: 0 },
@@ -38,16 +41,25 @@ const Navbar = () => {
     <div className="w-screen bg-black h-20 flex items-center justify-center z-[40] py-16">
       <nav className="w-11/12 flex justify-between items-center">
         {/* Logo */}
-        <Link href={"/"}>
-          <Image
-            loading="lazy"
-            width={"auto"}
-            height={"auto"}
-            src={jasperLogo}
-            className="w-28 md:w-40"
-            alt="Jasper Azerbaijan Logo"
-          />
-        </Link>
+        <div className="flex items-center">
+          <Link href={"/"}>
+            <Image
+              loading="lazy"
+              width={"24px"}
+              height={"24px"}
+              src={jasperLogoNew}
+              className="w-16 md:w-20 cursor-pointer"
+              alt="Jasper Azerbaijan Logo"
+            />
+          </Link>
+          <Link href={"/"}>
+            <h1
+              className={`${outfitFontNormal.className} text-white text-lg md:text-4xl w-10 md:w-full`}
+            >
+              Jasper Azerbaijan
+            </h1>
+          </Link>
+        </div>
 
         <div className="relative">
           <div className="flex items-center space-x-3">

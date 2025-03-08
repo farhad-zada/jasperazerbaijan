@@ -4,24 +4,37 @@ import { dropdownItems } from "@datas/dropdownItems";
 import Link from "@node_modules/next/link";
 import { handleGoSomewhere } from "@utils/handleGoSomewhere";
 import React from "react";
-import jasperLogo from "../public/assets/jasper normal logo.png";
+import jasperLogoNew from "../public/assets/jasperLogoNew.png";
 import Image from "@node_modules/next/image";
+
+import { Outfit } from "next/font/google";
+
+const outfitFontNormal = Outfit({ subsets: ["latin"], weight: "400" });
 
 const Footer = () => {
   return (
     <footer className="bg-darkGray w-screen min-h-[300px] h-full text-white">
       <div className="w-11/12 mx-auto pt-20">
         <div className="flex flex-col md:flex-row justify-between md:items-center ">
-          <Link href={"/"}>
-            {/* <h2 className="text-3xl md:text-5xl">Jasper Azerbaijan</h2> */}
-            <Image
-              width={"auto"}
-              height={"auto"}
-              src={jasperLogo}
-              className="w-28 md:w-40"
-              alt="Jasper Azerbaijan Logo"
-            />
-          </Link>
+          <div className="flex items-center">
+            <Link href={"/"}>
+              <Image
+                loading="lazy"
+                width={"24px"}
+                height={"24px"}
+                src={jasperLogoNew}
+                className="w-16 md:w-20 cursor-pointer"
+                alt="Jasper Azerbaijan Logo"
+              />
+            </Link>
+            <Link href={"/"}>
+              <h1
+                className={`${outfitFontNormal.className} text-white text-2xl md:text-4xl w-full`}
+              >
+                Jasper Azerbaijan
+              </h1>
+            </Link>
+          </div>
           <ul className="flex gap-5 mt-10 md:mt-0 md:gap-3 justify-center md:justify-normal flex-row">
             {dropdownItems.map((item) => (
               <li
