@@ -41,20 +41,20 @@ const Navbar = () => {
     <div className="w-screen bg-black h-20 flex items-center justify-center z-[40] py-16">
       <nav className="w-11/12 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center ">
           <Link href={"/"}>
             <Image
               loading="lazy"
               width={"24px"}
               height={"24px"}
               src={jasperLogoNew}
-              className="w-16 md:w-20 cursor-pointer"
+              className="w-12 md:w-16 cursor-pointer"
               alt="Jasper Azerbaijan Logo"
             />
           </Link>
           <Link href={"/"}>
             <h1
-              className={`${outfitFontNormal.className} text-white text-lg md:text-4xl w-10 md:w-full`}
+              className={`${outfitFontNormal.className} text-white text-base hidden md:flex  md:text-2xl w-10 md:w-full -ml-0  md:-ml-2 `}
             >
               Jasper Azerbaijan
             </h1>
